@@ -1,6 +1,22 @@
+import IndiaFlag from '../../util/svg/country/IndiaFlag'
+import NepalFlag from '../../util/svg/country/NepalFlag'
+import SingaporeFlag from '../../util/svg/country/SingaporeFlag'
+import USAFlag from '../../util/svg/country/USAFlag'
 import Pagination from '../pagination'
 
-const ThreatsTable = ({ threats }) => {
+const ThreatsTable = () => {
+
+    
+  const threats = [
+    { timestamp: 'Oct 19, 2023 12:24', country: 'Singapore', flag: <SingaporeFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'India', flag: <IndiaFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'Nepal', flag: <NepalFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
+  ]
+
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
@@ -45,8 +61,8 @@ const ThreatsTable = ({ threats }) => {
                         {threats.map((threat, index) => (
                             <tr key={index} className="hover:bg-gray-50 transition-colors">
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{threat.timestamp}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    <span className="mr-2">{threat.flag}</span>
+                                <td className="px-6 flex py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <span className="mr-2">{threat?.flag}</span>
                                     {threat.country}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{threat.threat}</td>

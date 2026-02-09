@@ -4,14 +4,14 @@ const NepalFlag = () => {
         <div>
             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0H1.595C1.89231 0 2.33439 0.134038 2.57394 0.293737L14.0535 7.9468C14.5394 8.27073 14.4501 8.53333 13.8698 8.53333H6.4L14.1305 15.2976C14.5739 15.6855 14.4534 16 13.8594 16H0V0Z" fill="url(#paint0_linear_1_446)" />
-                <mask id="mask0_1_446" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="16">
+                <mask id="mask0_1_446" style={{maskType: "luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="16">
                     <path d="M0 0H1.595C1.89231 0 2.33439 0.134038 2.57394 0.293737L14.0535 7.9468C14.5394 8.27073 14.4501 8.53333 13.8698 8.53333H6.4L14.1305 15.2976C14.5739 15.6855 14.4534 16 13.8594 16H0V0Z" fill="white" />
                 </mask>
                 <g mask="url(#mask0_1_446)">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1.595C1.89231 0 2.33439 0.134038 2.57394 0.293737L14.0535 7.9468C14.5394 8.27073 14.4501 8.53333 13.8698 8.53333H6.4L14.1305 15.2976C14.5739 15.6855 14.4534 16 13.8594 16H0V0Z" fill="url(#paint1_linear_1_446)" />
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1.595C1.76463 0 1.9537 0.0413093 2.10376 0.0862675C2.25287 0.130941 2.43367 0.200224 2.57394 0.293737L14.9333 8.53333H6.4L14.9333 16H0V0ZM1.06667 1.06667V14.9333H12.0945L3.56112 7.46667H11.4104L1.98236 1.18133C1.98236 1.18133 1.9779 1.17847 1.96779 1.17324C1.95716 1.16775 1.94294 1.16102 1.92511 1.15344C1.88906 1.13813 1.84508 1.12228 1.79763 1.10806C1.69208 1.07644 1.6161 1.06667 1.595 1.06667H1.06667Z" fill="url(#paint2_linear_1_446)" />
                 </g>
-                <mask id="mask1_1_446" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="16">
+                <mask id="mask1_1_446" style={{maskType: "luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="16">
                     <path d="M0 0H1.595C1.89231 0 2.33439 0.134038 2.57394 0.293737L14.0535 7.9468C14.5394 8.27073 14.4501 8.53333 13.8698 8.53333H6.4L14.1305 15.2976C14.5739 15.6855 14.4534 16 13.8594 16H0V0Z" fill="white" />
                 </mask>
                 <g mask="url(#mask1_1_446)">

@@ -11,17 +11,6 @@ function App() {
   const [selectedMenu, setSelectedMenu] = useState('Dashboard')
 
 
-
-  const threats = [
-    { timestamp: 'Oct 19, 2023 12:24', country: 'Philippines', flag: '🇵🇭', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'India', flag: '🇮🇳', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'Nepal', flag: '🇳🇵', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: '🇺🇸', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: '🇺🇸', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: '🇺🇸', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: '🇺🇸', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
-  ]
-
   const generateCalendarDays = (month) => {
     const days = []
     const maxDays = month === 1 ? 28 : month === 3 ? 30 : 31
@@ -77,7 +66,7 @@ function App() {
           </div>
 
           {/* Top Threats Table */}
-          <ThreatsTable threats={threats} />
+          <ThreatsTable  />
         </main>
       </div>
     </div>
