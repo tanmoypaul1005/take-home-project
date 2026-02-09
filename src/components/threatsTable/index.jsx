@@ -22,7 +22,7 @@ const ThreatsTable = () => {
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="p-6 border-b border-gray-200">
+            <div className="p-5 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                     <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
                     <div className="flex flex-wrap gap-3">
@@ -101,7 +101,7 @@ const ThreatsTable = () => {
 
             <div className="overflow-x-auto">
                 <table className="w-full">
-                    <thead className="bg-gray-50 border-b border-gray-200">
+                    <thead className="bg-[#F8F8FC] border-b border-gray-200">
                         <tr>
                             <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Timestamp</th>
                             <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Country</th>
