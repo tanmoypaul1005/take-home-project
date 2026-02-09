@@ -3,7 +3,6 @@ import './App.css'
 import SideBar from './components/sideBar'
 import Header from './components/header'
 import ThreatCalendar from './components/threatCalendar'
-import ThreatsSummary from './components/threatsSummary'
 import ThreatsTable from './components/threatsTable'
 
 function App() {
