@@ -65,7 +65,6 @@ function App() {
           <ThreatsTable  />
         </main>
 
-
       </div>
     </div>
   )
