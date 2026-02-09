@@ -47,12 +47,12 @@ function App() {
       />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen">
+      <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         {/* Dashboard Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
           {/* Threat Detection Cards */}
           <div className="mb-8">
             <div className="mb-5 text-xs font-medium">Dashboard &gt; <span className="text-[#0069F7] ">Dashboard</span></div>
@@ -66,7 +66,7 @@ function App() {
           <ThreatsTable  />
         </main>
 
-        
+
       </div>
     </div>
   )
