@@ -6,37 +6,87 @@ import Pagination from '../pagination'
 
 const ThreatsTable = () => {
 
-    
-  const threats = [
-    { timestamp: 'Oct 19, 2023 12:24', country: 'Singapore', flag: <SingaporeFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'India', flag: <IndiaFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'Nepal', flag: <NepalFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-    { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag/>, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
-  ]
+
+    const threats = [
+        { timestamp: 'Oct 19, 2023 12:24', country: 'Singapore', flag: <SingaporeFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'India', flag: <IndiaFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'Nepal', flag: <NepalFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
+        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
+    ]
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
-                    <h3 className="text-lg font-semibold text-gray-900">Top Threats Detected</h3>
+                    <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
                     <div className="flex flex-wrap gap-3">
-                        <select className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        {/* Select Threat Dropdown */}
+                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                                backgroundPosition: 'right 0.5rem center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '1.5em 1.5em'
+                            }}
+                        >
                             <option>Select Threat</option>
                             <option>Adware</option>
                             <option>Malware</option>
+                            <option>Ransomware</option>
+                            <option>Spyware</option>
                         </select>
-                        <select className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        {/* Country Dropdown */}
+                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                                backgroundPosition: 'right 0.5rem center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '1.5em 1.5em'
+                            }}
+                        >
                             <option>Country</option>
+                            <option>United States</option>
+                            <option>United Kingdom</option>
+                            <option>Canada</option>
+                            <option>Australia</option>
                         </select>
-                        <select className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        {/* Select Risk Dropdown */}
+                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                                backgroundPosition: 'right 0.5rem center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '1.5em 1.5em'
+                            }}
+                        >
                             <option>Select Risk</option>
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                            <option>Critical</option>
                         </select>
-                        <select className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        {/* From Date - To Date Dropdown */}
+                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[200px]"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                                backgroundPosition: 'right 0.5rem center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '1.5em 1.5em'
+                            }}
+                        >
                             <option>From Date - To Date</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                            <option>Custom Range</option>
                         </select>
+
                         <button className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
                             🔍
                         </button>
