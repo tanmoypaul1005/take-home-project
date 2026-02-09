@@ -1,8 +1,28 @@
 
+import { useState } from 'react'
 import Pagination from '../pagination'
 import { threats } from './data'
 
 const ThreatsTable = () => {
+
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [itemsPerPage, setItemsPerPage] = useState(50)
+
+    // Calculate pagination
+    const indexOfLastItem = currentPage * itemsPerPage
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
+    const currentThreats = threats.slice(indexOfFirstItem, indexOfLastItem)
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page)
+    }
+
+    const handleItemsPerPageChange = (newItemsPerPage) => {
+        setItemsPerPage(newItemsPerPage)
+        setCurrentPage(1) // Reset to first page when items per page changes
+    }
+
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -119,7 +139,12 @@ const ThreatsTable = () => {
                 </table>
             </div>
 
-            <Pagination />
+            <Pagination
+                totalItems={threats.length}
+                onPageChange={handlePageChange}
+                onItemsPerPageChange={handleItemsPerPageChange}
+            />
+
         </div>
     )
 }
