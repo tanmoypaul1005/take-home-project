@@ -1,37 +1,44 @@
-
-
-
 import React, { useState } from 'react';
 
 const ThreatCalendar = () => {
-  const [viewPeriod, setViewPeriod] = useState('4 Months');
+  const [viewPeriod, setViewPeriod] = useState(4);
+  const [selectedYear, setSelectedYear] = useState('This Year');
   
-  // Generate calendar data for 4 months
-  const months = ['January', 'February', 'March', 'April'];
   const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
   
-  // Calendar data for each month (starting day of week and number of days)
-  const monthsData = [
-    { name: 'January', startDay: 0, days: 31 }, // Starts on Monday
-    { name: 'February', startDay: 3, days: 29 }, // Starts on Thursday (leap year)
-    { name: 'March', startDay: 4, days: 31 }, // Starts on Friday
-    { name: 'April', startDay: 0, days: 30 }, // Starts on Monday
+  // Calendar data for all 12 months (starting day of week and number of days)
+  const allMonthsData = [
+    { name: 'January', startDay: 0, days: 31 },
+    { name: 'February', startDay: 3, days: 29 },
+    { name: 'March', startDay: 4, days: 31 },
+    { name: 'April', startDay: 0, days: 30 },
+    { name: 'May', startDay: 2, days: 31 },
+    { name: 'June', startDay: 5, days: 30 },
+    { name: 'July', startDay: 0, days: 31 },
+    { name: 'August', startDay: 3, days: 31 },
+    { name: 'September', startDay: 6, days: 30 },
+    { name: 'October', startDay: 1, days: 31 },
+    { name: 'November', startDay: 4, days: 30 },
+    { name: 'December', startDay: 6, days: 31 },
   ];
   
-  // Simulated threat data - days with threats (0-4 intensity levels)
+  // Get months based on view period
+  const monthsData = allMonthsData.slice(0, viewPeriod);
+  
+  // Simulated threat data - days with threats (0-4 intensity levels) for all 12 months
   const threatData = {
-    January: [
-      0,2,0,1,2,3,0,1,0,1,2,3,0,0,3,0,2,3,0,4,0,0,1,2,1,2,0,0,1,2,0
-    ],
-    February: [
-      0,1,0,1,2,3,0,2,1,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,2,0
-    ],
-    March: [
-      0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0,2
-    ],
-    April: [
-      0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0
-    ]
+    January: [0,2,0,1,2,3,0,1,0,1,2,3,0,0,3,0,2,3,0,4,0,0,1,2,1,2,0,0,1,2,0],
+    February: [0,1,0,1,2,3,0,2,1,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,2,0],
+    March: [0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0,2],
+    April: [0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0],
+    May: [0,2,0,1,2,3,0,1,0,1,2,3,0,0,3,0,2,3,0,4,0,0,1,2,1,2,0,0,1,2,0],
+    June: [0,1,0,1,2,3,0,2,1,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,2,0],
+    July: [0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0,2],
+    August: [0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0,2],
+    September: [0,2,0,1,2,3,0,1,0,1,2,3,0,0,3,0,2,3,0,4,0,0,1,2,1,2,0,0,1,0],
+    October: [0,1,0,1,2,3,0,2,1,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,2,0,1],
+    November: [0,1,0,1,2,3,0,1,0,2,0,3,4,0,3,0,2,3,0,4,0,0,1,2,1,2,4,0,1,0],
+    December: [0,2,0,1,2,3,0,1,0,1,2,3,0,0,3,0,2,3,0,4,0,0,1,2,1,2,0,0,1,2,0]
   };
   
   // Get color based on threat level
@@ -78,7 +85,7 @@ const ThreatCalendar = () => {
     }
     
     return (
-      <div key={name} className="flex-1 min-w-[200px]">
+      <div key={name} className="w-full">
         <div className="mb-4">
           <h3 className="text-sm font-semibold text-gray-700 text-center">{name}</h3>
         </div>
@@ -111,6 +118,8 @@ const ThreatCalendar = () => {
         
         {/* Year selector */}
         <select 
+          value={selectedYear}
+          onChange={(e) => setSelectedYear(e.target.value)}
           className="px-4 py-2 pr-10 border border-gray-300 rounded-lg text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
@@ -127,7 +136,11 @@ const ThreatCalendar = () => {
       </div>
       
       {/* Calendar Grid */}
-      <div className="flex gap-6 mb-6 overflow-x-auto pb-4">
+      <div className={`grid gap-6 mb-6 ${
+        viewPeriod === 4 ? 'grid-cols-4' : 
+        viewPeriod === 8 ? 'grid-cols-4' : 
+        'grid-cols-4'
+      }`}>
         {monthsData.map((month, index) => renderMonth(month, index))}
       </div>
       
@@ -137,9 +150,9 @@ const ThreatCalendar = () => {
         
         <div className="flex gap-2">
           <button
-            onClick={() => setViewPeriod('4 Months')}
+            onClick={() => setViewPeriod(4)}
             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-              viewPeriod === '4 Months'
+              viewPeriod === 4
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
@@ -148,9 +161,9 @@ const ThreatCalendar = () => {
           </button>
           
           <button
-            onClick={() => setViewPeriod('8 Months')}
+            onClick={() => setViewPeriod(8)}
             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-              viewPeriod === '8 Months'
+              viewPeriod === 8
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
@@ -159,9 +172,9 @@ const ThreatCalendar = () => {
           </button>
           
           <button
-            onClick={() => setViewPeriod('12 Months')}
+            onClick={() => setViewPeriod(12)}
             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-              viewPeriod === '12 Months'
+              viewPeriod === 12
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
