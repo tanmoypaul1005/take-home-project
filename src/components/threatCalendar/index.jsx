@@ -205,8 +205,8 @@ const ThreatCalendar = () => {
 
                 {/* Calendar Grid */}
                 <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-4' :
-                        viewPeriod === 8 ? 'grid-cols-4' :
-                            'grid-cols-4'
+                    viewPeriod === 8 ? 'grid-cols-4' :
+                        'grid-cols-4'
                     }`}>
                     {monthsData.map((month, index) => renderMonth(month, index))}
                 </div>
@@ -219,8 +219,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(4)}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
@@ -229,8 +229,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(8)}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             8 Months
@@ -239,8 +239,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(12)}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             12 Months
@@ -263,7 +263,7 @@ const ThreatCalendar = () => {
                         className="fixed z-50"
                         style={{
                             left: `${modalPosition.x}px`,
-                            top: `${modalPosition.y +79}px`,
+                            top: `${modalPosition.y + 79}px`,
                         }}
                     >
                         <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 relative">
@@ -291,36 +291,36 @@ const ThreatCalendar = () => {
                             </div>
 
                             {/* Total Threats */}
-                            <div className="bg-orange-50 rounded-xl p-4 mb-3 flex items-center justify-between">
+                            <div className="bg-[#FFE8CD] rounded-xl p-2.5 mb-3 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="10" cy="10" r="9" stroke="#F59E0B" strokeWidth="2" />
                                         <path d="M10 6V11" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
                                         <circle cx="10" cy="14" r="0.5" fill="#F59E0B" />
                                     </svg>
-                                    <span className="font-semibold text-gray-900">Total Threats Detected</span>
+                                    <span className="font-semibold text-[10px] text-[#000000]">Total Threats Detected</span>
                                 </div>
-                                <span className="text-xl font-bold text-orange-500">{selectedDate.total}</span>
+                                <span className="text-xs font-semibold text-[#FF8A00]">{selectedDate.total}</span>
                             </div>
 
                             {/* Threat Levels */}
                             <div className="space-y-2">
                                 {/* High */}
-                                <div className="bg-red-50 rounded-xl p-3 flex items-center justify-between">
-                                    <span className="font-medium text-gray-900">High</span>
-                                    <span className="text-lg font-bold text-red-500">{selectedDate.high}</span>
+                                <div className="bg-[#FFCCCC] text-xs font-normal rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
+                                    <span className="text-gray-900">High</span>
+                                    <span className="text-red-500">{selectedDate.high}</span>
                                 </div>
 
                                 {/* Medium */}
-                                <div className="bg-yellow-50 rounded-xl p-3 flex items-center justify-between">
-                                    <span className="font-medium text-gray-900">Medium</span>
-                                    <span className="text-lg font-bold text-yellow-600">{selectedDate.medium}</span>
+                                <div className="text-xs font-normal bg-[#FFEDCC] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
+                                    <span className="text-gray-900">Medium</span>
+                                    <span className="text-yellow-600">{selectedDate.medium}</span>
                                 </div>
 
                                 {/* Low */}
-                                <div className="bg-green-50 rounded-xl p-3 flex items-center justify-between">
-                                    <span className="font-medium text-gray-900">Low</span>
-                                    <span className="text-lg font-bold text-green-500">{selectedDate.low}</span>
+                                <div className="text-xs font-normal bg-[#CCFFE9] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
+                                    <span className="text-gray-900">Low</span>
+                                    <span className="text-green-500">{selectedDate.low}</span>
                                 </div>
                             </div>
 
