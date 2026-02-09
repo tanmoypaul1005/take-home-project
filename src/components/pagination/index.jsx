@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
     const [currentPage, setCurrentPage] = useState(1)
-    const [itemsPerPage, setItemsPerPage] = useState(50)
+    const [itemsPerPage, setItemsPerPage] = useState(10)
 
     const totalPages = Math.ceil(totalItems / itemsPerPage)
 
@@ -29,7 +29,7 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
     const getPageNumbers = () => {
         const pages = []
         const maxVisible = 4
-        
+
         if (totalPages <= maxVisible) {
             for (let i = 1; i <= totalPages; i++) {
                 pages.push(i)
@@ -43,50 +43,49 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 pages.push(currentPage - 1, currentPage, currentPage + 1, currentPage + 2)
             }
         }
-        
+
         return pages
     }
 
     return (
         <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
             <div className="flex items-center space-x-2">
-                <button 
+                <button
                     onClick={goToPrevPage}
                     disabled={currentPage === 1}
                     className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;
                 </button>
-                <button 
+                <button
                     onClick={goToFirstPage}
                     disabled={currentPage === 1}
                     className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;&lt;
                 </button>
-                
+
                 {getPageNumbers().map((page) => (
                     <button
                         key={page}
                         onClick={() => handlePageChange(page)}
-                        className={`px-3 py-1 rounded text-sm font-medium ${
-                            currentPage === page
+                        className={`px-3 py-1 rounded text-sm font-medium ${currentPage === page
                                 ? 'bg-blue-600 text-white'
                                 : 'border border-gray-300 hover:bg-gray-50'
-                        }`}
+                            }`}
                     >
                         {page}
                     </button>
                 ))}
-                
-                <button 
+
+                <button
                     onClick={goToNextPage}
                     disabled={currentPage === totalPages}
                     className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &gt;
                 </button>
-                <button 
+                <button
                     onClick={goToLastPage}
                     disabled={currentPage === totalPages}
                     className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
@@ -99,11 +98,12 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                     Viewing <span className="font-medium">{itemsPerPage}</span>
                 </span>
                 <span className="text-sm text-gray-700">of</span>
-                <select 
+                <select
                     value={itemsPerPage}
                     onChange={handleItemsPerPageChange}
                     className="px-2 py-1 border border-gray-300 rounded text-sm"
                 >
+                    <option value={10}>10</option>
                     <option value={25}>25</option>
                     <option value={50}>50</option>
                     <option value={100}>100</option>
