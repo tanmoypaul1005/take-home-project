@@ -5,11 +5,26 @@ import { threats } from './data'
 const ThreatsTable = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [itemsPerPage, setItemsPerPage] = useState(10)
+    const [selectedThreat, setSelectedThreat] = useState('Select Threat')
+    const [selectedCountry, setSelectedCountry] = useState('Country')
+    const [selectedRisk, setSelectedRisk] = useState('Select Risk')
+    const [selectedDateRange, setSelectedDateRange] = useState('From Date - To Date')
 
     // Calculate pagination
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
-    const currentThreats = threats.slice(indexOfFirstItem, indexOfLastItem)
+    
+    // Filter threats based on selected filters
+    const filteredThreats = threats.filter(threat => {
+        const matchesThreat = selectedThreat === 'Select Threat' || threat.threat === selectedThreat
+        const matchesCountry = selectedCountry === 'Country' || threat.country === selectedCountry
+        const matchesRisk = selectedRisk === 'Select Risk' || threat.risk === selectedRisk
+        // Date range filtering can be added later with actual date logic
+        
+        return matchesThreat && matchesCountry && matchesRisk
+    })
+    
+    const currentThreats = filteredThreats.slice(indexOfFirstItem, indexOfLastItem)
 
     const handlePageChange = (page) => {
         setCurrentPage(page)
@@ -19,6 +34,29 @@ const ThreatsTable = () => {
         setItemsPerPage(newItemsPerPage)
         setCurrentPage(1) // Reset to first page when items per page changes
     }
+
+    // Reset to page 1 when filters change
+    const handleThreatChange = (value) => {
+        setSelectedThreat(value)
+        setCurrentPage(1)
+    }
+
+    const handleCountryChange = (value) => {
+        setSelectedCountry(value)
+        setCurrentPage(1)
+    }
+
+    const handleRiskChange = (value) => {
+        setSelectedRisk(value)
+        setCurrentPage(1)
+    }
+
+    const handleDateRangeChange = (value) => {
+        setSelectedDateRange(value)
+        setCurrentPage(1)
+    }
+
+
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -34,6 +72,8 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
+                            value={selectedThreat}
+                            onChange={handleThreatChange}
                         >
                             <option>Select Threat</option>
                             <option>Adware</option>
@@ -50,6 +90,8 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
+                             value={selectedCountry}
+                            onChange={handleCountryChange}
                         >
                             <option>Country</option>
                             <option>United States</option>
@@ -66,6 +108,8 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
+                             value={selectedRisk}
+                            onChange={handleRiskChange}
                         >
                             <option>Select Risk</option>
                             <option>Low</option>
@@ -82,6 +126,8 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
+                              value={selectedDateRange}
+                            onChange={handleDateRangeChange}
                         >
                             <option>From Date - To Date</option>
                             <option>Last 7 Days</option>
@@ -113,7 +159,7 @@ const ThreatsTable = () => {
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                        {currentThreats.map((threat, index) => (
+                        {currentThreats?.map((threat, index) => (
                             <tr key={index} className="hover:bg-gray-50 transition-colors">
                                 <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.timestamp}</td>
                                 <td className="px-6 flex py-4 whitespace-nowrap text-xs font-normal text-[#000000]">
@@ -135,7 +181,7 @@ const ThreatsTable = () => {
                 </table>
             </div>
 
-            <Pagination 
+            <Pagination
                 totalItems={threats.length}
                 onPageChange={handlePageChange}
                 onItemsPerPageChange={handleItemsPerPageChange}
