@@ -1,9 +1,14 @@
 import AllowedDomains from "../../util/svg/sideBar/AllowedDomains";
+import BackupAndRestore from "../../util/svg/sideBar/BackupAndRestore";
 import BlockedDomainsIcon from "../../util/svg/sideBar/BlockedDomainsIcon";
 import DashboardIcon from "../../util/svg/sideBar/DashboardIcon";
+import DGADomain from "../../util/svg/sideBar/DGADomain";
 import HistoryOfIP from "../../util/svg/sideBar/HistoryOfIP";
 import Reports from "../../util/svg/sideBar/Reports";
+import Settings from "../../util/svg/sideBar/Settings";
+import SiteRiskIndicator from "../../util/svg/sideBar/SiteRiskIndicator";
 import ThreatIcon from "../../util/svg/sideBar/ThreatIcon";
+import Users from "../../util/svg/sideBar/Users";
 
 const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen }) => {
 
@@ -14,11 +19,11 @@ const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen })
         { name: 'Allowed Domains', icon: <AllowedDomains/> },
         { name: 'Reports', icon: <Reports /> },
         { name: 'History of IP', icon: <HistoryOfIP/> },
-        { name: 'DGA Domain', icon: '🎲' },
-        { name: 'Backup and Restore', icon: '💾' },
-        { name: 'Site Risk Indicator', icon: '⚠️' },
-        { name: 'Users', icon: '👥' },
-        { name: 'Settings', icon: '⚙️' }
+        { name: 'DGA Domain', icon: <DGADomain/> },
+        { name: 'Backup and Restore', icon: <BackupAndRestore/> },
+        { name: 'Site Risk Indicator', icon: <SiteRiskIndicator/> },
+        { name: 'Users', icon: <Users/> },
+        { name: 'Settings', icon: <Settings/> }
     ]
 
     return (
