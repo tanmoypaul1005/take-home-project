@@ -108,6 +108,8 @@ const ThreatCalendar = () => {
   };
   
   return (
+
+    
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       {/* Header */}
       <div className="flex justify-between items-start mb-6">
