@@ -70,7 +70,7 @@ const ThreatsTable = () => {
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600">{threat.domain}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{threat.destIP}</td>
                                 <td className="px-6 py-4 whitespace-nowrap">
-                                    <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800">
+                                    <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#FF8A0021] text-[#FF8A00]">
                                         {threat.risk}
                                     </span>
                                 </td>
