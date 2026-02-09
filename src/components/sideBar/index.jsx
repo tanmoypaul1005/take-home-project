@@ -1,13 +1,19 @@
+import AllowedDomains from "../../util/svg/sideBar/AllowedDomains";
+import BlockedDomainsIcon from "../../util/svg/sideBar/BlockedDomainsIcon";
+import DashboardIcon from "../../util/svg/sideBar/DashboardIcon";
+import HistoryOfIP from "../../util/svg/sideBar/HistoryOfIP";
+import Reports from "../../util/svg/sideBar/Reports";
+import ThreatIcon from "../../util/svg/sideBar/ThreatIcon";
 
 const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen }) => {
 
     const menuItems = [
-        { name: 'Dashboard', icon: '📊' },
-        { name: 'Threat Detection', icon: '🛡️' },
-        { name: 'Blocked Domains', icon: '🚫' },
-        { name: 'Allowed Domains', icon: '✅' },
-        { name: 'Reports', icon: '📄' },
-        { name: 'History of IP', icon: '🕒' },
+        { name: 'Dashboard', icon: <DashboardIcon /> },
+        { name: 'Threat Detection', icon: <ThreatIcon/> },
+        { name: 'Blocked Domains', icon: <BlockedDomainsIcon/> },
+        { name: 'Allowed Domains', icon: <AllowedDomains/> },
+        { name: 'Reports', icon: <Reports /> },
+        { name: 'History of IP', icon: <HistoryOfIP/> },
         { name: 'DGA Domain', icon: '🎲' },
         { name: 'Backup and Restore', icon: '💾' },
         { name: 'Site Risk Indicator', icon: '⚠️' },
