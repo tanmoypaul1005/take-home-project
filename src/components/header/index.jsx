@@ -45,13 +45,13 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
                             <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                         </button>
                      
-                        <div className="flex items-center space-x-2 ml-4">
+                        <div className="flex items-center space-x-2.5 ml-4">
                             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-medium">
                                 AW
                             </div>
                             <div className="hidden md:block text-sm">
-                                <div className="font-medium text-gray-900">Allan Watanabe</div>
-                                <div className="text-gray-500 text-xs">Super Administrator</div>
+                                <div className="font-normal text-[#2E3950] text-base">Allan Watanabe</div>
+                                <div className="text-[#2E3950] font-normal text-xs">Super Administrator</div>
                             </div>
                         </div>
                     </div>
