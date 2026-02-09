@@ -1,21 +1,8 @@
-import IndiaFlag from '../../util/svg/country/IndiaFlag'
-import NepalFlag from '../../util/svg/country/NepalFlag'
-import SingaporeFlag from '../../util/svg/country/SingaporeFlag'
-import USAFlag from '../../util/svg/country/USAFlag'
+
 import Pagination from '../pagination'
+import { threats } from './data'
 
 const ThreatsTable = () => {
-
-
-    const threats = [
-        { timestamp: 'Oct 19, 2023 12:24', country: 'Singapore', flag: <SingaporeFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'India', flag: <IndiaFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'Nepal', flag: <NepalFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
-        { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: <USAFlag />, threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
-    ]
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
