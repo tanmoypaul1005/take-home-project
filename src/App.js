@@ -55,7 +55,7 @@ function App() {
         <main className="flex-1 p-4 sm:p-6 lg:p-8">
           {/* Threat Detection Cards */}
           <div className="mb-8">
-            <div className="mb-5 text-xs font-medium">Dashboard > <span className="text-[#0069F7] ">Dashboard</span></div>
+            <div className="mb-5 text-xs font-medium">Dashboard &gt; <span className="text-[#0069F7] ">Dashboard</span></div>
             <ThreatCalendar 
               generateCalendarDays={generateCalendarDays}
               getIntensityColor={getIntensityColor}
@@ -65,6 +65,8 @@ function App() {
           {/* Top Threats Table */}
           <ThreatsTable  />
         </main>
+
+        
       </div>
     </div>
   )
