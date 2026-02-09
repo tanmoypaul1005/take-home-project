@@ -1,23 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import SideBar from './components/sideBar'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [selectedMenu, setSelectedMenu] = useState('Dashboard')
 
-  const menuItems = [
-    { name: 'Dashboard', icon: '📊' },
-    { name: 'Threat Detection', icon: '🛡️' },
-    { name: 'Blocked Domains', icon: '🚫' },
-    { name: 'Allowed Domains', icon: '✅' },
-    { name: 'Reports', icon: '📄' },
-    { name: 'History of IP', icon: '🕒' },
-    { name: 'DGA Domain', icon: '🎲' },
-    { name: 'Backup and Restore', icon: '💾' },
-    { name: 'Site Risk Indicator', icon: '⚠️' },
-    { name: 'Users', icon: '👥' },
-    { name: 'Settings', icon: '⚙️' }
-  ]
+
 
   const threats = [
     { timestamp: 'Oct 19, 2023 12:24', country: 'Philippines', flag: '🇵🇭', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' },
@@ -29,7 +18,7 @@ function App() {
     { timestamp: 'Oct 19, 2023 12:24', country: 'United States', flag: '🇺🇸', threat: 'Adware', sourceIP: '103.24.81.52', domain: 'netquy.com', destIP: '106.10.236.137', risk: 'Suspicious' }
   ]
 
-  const generateCalendarDays = (month: number) => {
+  const generateCalendarDays = (month) => {
     const days = []
     const maxDays = month === 1 ? 28 : month === 3 ? 30 : 31
     for (let i = 1; i <= maxDays; i++) {
@@ -39,7 +28,7 @@ function App() {
     return days
   }
 
-  const getIntensityColor = (intensity: number) => {
+  const getIntensityColor = (intensity) => {
     if (intensity === 0) return 'bg-blue-100'
     if (intensity === 1) return 'bg-blue-300'
     if (intensity === 2) return 'bg-blue-500'
@@ -50,46 +39,14 @@ function App() {
     <div className="min-h-screen bg-gray-50 flex">
       {/* Mobile Overlay */}
       {sidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-64 bg-blue-600 transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="h-full flex flex-col">
-          {/* Logo */}
-          <div className="p-6 flex items-center justify-center border-b border-blue-500">
-            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-              <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Menu Items */}
-          <nav className="flex-1 overflow-y-auto py-4">
-            {menuItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  setSelectedMenu(item.name)
-                  setSidebarOpen(false)
-                }}
-                className={`w-full flex items-center space-x-3 px-6 py-3 text-left transition-colors ${
-                  selectedMenu === item.name
-                    ? 'bg-blue-700 text-white border-l-4 border-white'
-                    : 'text-blue-100 hover:bg-blue-500'
-                }`}
-              >
-                <span className="text-xl">{item.icon}</span>
-                <span className="font-medium">{item.name}</span>
-              </button>
-            ))}
-          </nav>
-        </div>
-      </aside>
+      <SideBar setSelectedMenu={setSelectedMenu} setSidebarOpen={setSidebarOpen} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen">
@@ -157,7 +114,7 @@ function App() {
                 <span className="text-sm text-gray-500">This Year ▼</span>
               </div>
               <p className="text-sm text-gray-600 mb-4">Real-time monitoring and identification of code threats.</p>
-              
+
               <div className="mb-4">
                 <h4 className="text-sm font-medium text-gray-700 mb-2">January</h4>
                 <div className="grid grid-cols-7 gap-1">
