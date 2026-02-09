@@ -27,11 +27,11 @@ const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen })
     ]
 
     return (
-        <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-64 bg-[#0069F7] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-68 bg-[#0069F7] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
             <div className="h-full flex flex-col px-6">
                 {/* Logo */}
-                <div className=" pt-6 flex">
-                    <div className="w-12 h-12 bg-white rounded-[20px] p-3 flex items-center justify-center">
+                <div className="pt-6 flex">
+                    <div className="w-12 h-12 bg-white rounded-[16px] p-3 flex items-center justify-center">
                         <img src="./logo.svg" alt="Logo" />
                     </div>
                 </div>
