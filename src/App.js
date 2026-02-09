@@ -54,12 +54,8 @@ function App() {
         {/* Dashboard Content */}
         <main className="flex-1 p-4 sm:p-6 lg:p-8">
           {/* Threat Detection Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="mb-8">
             <ThreatCalendar 
-              generateCalendarDays={generateCalendarDays}
-              getIntensityColor={getIntensityColor}
-            />
-            <ThreatsSummary 
               generateCalendarDays={generateCalendarDays}
               getIntensityColor={getIntensityColor}
             />
