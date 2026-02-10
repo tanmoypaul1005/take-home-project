@@ -154,13 +154,13 @@ const ThreatCalendar = () => {
         return (
             <div key={name} className="w-full">
                 <div className="mb-4">
-                    <h3 className="text-sm font-semibold text-gray-700 text-center">{name}</h3>
+                    <h3 className="text-sm font-semibold text-center text-gray-700">{name}</h3>
                 </div>
 
                 {/* Day headers */}
                 <div className="grid grid-cols-7 gap-1 mb-2">
                     {daysOfWeek.map((day) => (
-                        <div key={day} className="text-xs font-medium text-gray-500 text-center">
+                        <div key={day} className="text-xs font-medium text-center text-gray-500">
                             {day}
                         </div>
                     ))}
@@ -176,11 +176,11 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
                 {/* Header */}
-                <div className="flex justify-between items-start mb-6">
+                <div className="flex items-start justify-between mb-6">
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-900 mb-1">Threat Detection</h1>
+                        <h1 className="mb-1 text-2xl font-bold text-gray-900">Threat Detection</h1>
                         <p className="text-sm text-gray-600">Real-time monitoring and identification of potential risks</p>
                     </div>
 
@@ -188,7 +188,7 @@ const ThreatCalendar = () => {
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="px-4 py-2 pr-10 border border-gray-300 rounded-lg text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer"
+                        className="px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',
@@ -212,8 +212,8 @@ const ThreatCalendar = () => {
                 </div>
 
                 {/* Footer Controls */}
-                <div className="flex justify-end items-center gap-4 pt-4 border-t border-gray-200">
-                    <span className="text-sm text-gray-600 font-medium">Viewing</span>
+                <div className="flex items-center justify-end gap-4 pt-4 border-t border-gray-200">
+                    <span className="text-sm font-medium text-gray-600">Viewing</span>
 
                     <div className="flex gap-2">
                         <button
@@ -263,13 +263,13 @@ const ThreatCalendar = () => {
                         className="fixed z-50"
                         style={{
                             left: `${modalPosition.x}px`,
-                            top: `${modalPosition.y + 79}px`,
+                            top: `${modalPosition.y + 180}px`,
                         }}
                     >
-                        <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 relative">
+                        <div className="relative p-6 bg-white shadow-2xl rounded-2xl w-80">
                             {/* Pointer Arrow */}
                             <div
-                                className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rotate-45 shadow-lg"
+                                className="absolute w-6 h-6 transform rotate-45 -translate-x-1/2 bg-white shadow-lg -bottom-3 left-1/2"
                                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
                             />
 
