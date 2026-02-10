@@ -10,32 +10,97 @@ const ThreatCalendar = () => {
 
     const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
-    // Calendar data for all 12 months (starting day of week and number of days)
-    const allMonthsData = [
-        { name: 'January', startDay: 0, days: 31 },
-        { name: 'February', startDay: 3, days: 29 },
-        { name: 'March', startDay: 4, days: 31 },
-        { name: 'April', startDay: 0, days: 30 },
-        { name: 'May', startDay: 2, days: 31 },
-        { name: 'June', startDay: 5, days: 30 },
-        { name: 'July', startDay: 0, days: 31 },
-        { name: 'August', startDay: 3, days: 31 },
-        { name: 'September', startDay: 6, days: 30 },
-        { name: 'October', startDay: 1, days: 31 },
-        { name: 'November', startDay: 4, days: 30 },
-        { name: 'December', startDay: 6, days: 31 },
-    ];
+    // Get calendar data for specific year
+    const getCalendarDataForYear = (year) => {
+        // Calendar data for each year
+        // startDay: 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+        const yearData = {
+            'This Year': [ // 2026
+                { name: 'January', startDay: 3, days: 31 },      // Thursday
+                { name: 'February', startDay: 6, days: 28 },     // Sunday
+                { name: 'March', startDay: 6, days: 31 },        // Sunday
+                { name: 'April', startDay: 2, days: 30 },        // Wednesday
+                { name: 'May', startDay: 4, days: 31 },          // Friday
+                { name: 'June', startDay: 0, days: 30 },         // Monday
+                { name: 'July', startDay: 2, days: 31 },         // Wednesday
+                { name: 'August', startDay: 5, days: 31 },       // Saturday
+                { name: 'September', startDay: 1, days: 30 },    // Tuesday
+                { name: 'October', startDay: 3, days: 31 },      // Thursday
+                { name: 'November', startDay: 6, days: 30 },     // Sunday
+                { name: 'December', startDay: 1, days: 31 },     // Tuesday
+            ],
+            'Last Year': [ // 2025
+                { name: 'January', startDay: 2, days: 31 },      // Wednesday
+                { name: 'February', startDay: 5, days: 28 },     // Saturday
+                { name: 'March', startDay: 5, days: 31 },        // Saturday
+                { name: 'April', startDay: 1, days: 30 },        // Tuesday
+                { name: 'May', startDay: 3, days: 31 },          // Thursday
+                { name: 'June', startDay: 6, days: 30 },         // Sunday
+                { name: 'July', startDay: 1, days: 31 },         // Tuesday
+                { name: 'August', startDay: 4, days: 31 },       // Friday
+                { name: 'September', startDay: 0, days: 30 },    // Monday
+                { name: 'October', startDay: 2, days: 31 },      // Wednesday
+                { name: 'November', startDay: 5, days: 30 },     // Saturday
+                { name: 'December', startDay: 0, days: 31 },     // Monday
+            ],
+            '2024': [
+                { name: 'January', startDay: 0, days: 31 },      // Monday
+                { name: 'February', startDay: 3, days: 29 },     // Thursday (leap year)
+                { name: 'March', startDay: 4, days: 31 },        // Friday
+                { name: 'April', startDay: 0, days: 30 },        // Monday
+                { name: 'May', startDay: 2, days: 31 },          // Wednesday
+                { name: 'June', startDay: 5, days: 30 },         // Saturday
+                { name: 'July', startDay: 0, days: 31 },         // Monday
+                { name: 'August', startDay: 3, days: 31 },       // Thursday
+                { name: 'September', startDay: 6, days: 30 },    // Sunday
+                { name: 'October', startDay: 1, days: 31 },      // Tuesday
+                { name: 'November', startDay: 4, days: 30 },     // Friday
+                { name: 'December', startDay: 6, days: 31 },     // Sunday
+            ],
+            '2023': [
+                { name: 'January', startDay: 6, days: 31 },      // Sunday
+                { name: 'February', startDay: 2, days: 28 },     // Wednesday
+                { name: 'March', startDay: 2, days: 31 },        // Wednesday
+                { name: 'April', startDay: 5, days: 30 },        // Saturday
+                { name: 'May', startDay: 0, days: 31 },          // Monday
+                { name: 'June', startDay: 3, days: 30 },         // Thursday
+                { name: 'July', startDay: 5, days: 31 },         // Saturday
+                { name: 'August', startDay: 1, days: 31 },       // Tuesday
+                { name: 'September', startDay: 4, days: 30 },    // Friday
+                { name: 'October', startDay: 6, days: 31 },      // Sunday
+                { name: 'November', startDay: 2, days: 30 },     // Wednesday
+                { name: 'December', startDay: 4, days: 31 },     // Friday
+            ],
+            '2022': [
+                { name: 'January', startDay: 5, days: 31 },      // Saturday
+                { name: 'February', startDay: 1, days: 28 },     // Tuesday
+                { name: 'March', startDay: 1, days: 31 },        // Tuesday
+                { name: 'April', startDay: 4, days: 30 },        // Friday
+                { name: 'May', startDay: 6, days: 31 },          // Sunday
+                { name: 'June', startDay: 2, days: 30 },         // Wednesday
+                { name: 'July', startDay: 4, days: 31 },         // Friday
+                { name: 'August', startDay: 0, days: 31 },       // Monday
+                { name: 'September', startDay: 3, days: 30 },    // Thursday
+                { name: 'October', startDay: 5, days: 31 },      // Saturday
+                { name: 'November', startDay: 1, days: 30 },     // Tuesday
+                { name: 'December', startDay: 3, days: 31 },     // Thursday
+            ],
+        };
 
-    // Get months based on view period
-    const monthsData = allMonthsData.slice(0, viewPeriod);
+        return yearData[year] || yearData['This Year'];
+    };
+
+    // Get months based on view period and selected year
+    const adjustedMonthsData = getCalendarDataForYear(selectedYear);
+    const monthsData = adjustedMonthsData.slice(0, viewPeriod);
 
     // Simulated threat data - days with threats (0-4 intensity levels) for all 12 months
     const threatData = {
-        January: [0, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 0, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 0, 0, 1, 2, 0],
-        February: [0, 1, 0, 1, 2, 3, 0, 2, 1, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 2, 0],
-        March: [0, 1, 0, 1, 2, 3, 0, 1, 0, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 0, 2],
-        April: [0, 1, 0, 1, 2, 3, 0, 1, 0, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 0],
-        May: [0, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 0, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 0, 0, 1, 2, 0],
+        January: [4, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 3, 4, 3, 0, 3, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 2, 0],
+        February: [0, 1, 0, 1, 2, 3, 0, 2, 1, 2, 0, 3, 4, 0, 3, 4, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 2, 0],
+        March: [3, 1, 0, 3, 2, 3, 0, 1, 0, 2, 4, 3, 4, 0, 3, 0, 2, 3, 2, 4, 0, 0, 1, 2, 4, 2, 4, 3, 1, 2, 2],
+        April: [0, 4, 0, 1, 3, 3, 0, 3, 0, 3, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 0],
+        May: [0, 3, 0, 4, 2, 3, 4, 1, 0, 3, 2, 3, 0, 0, 3, 4, 2, 3, 0, 4, 0, 3, 1, 2, 1, 3, 0, 0, 3, 4, 0],
         June: [0, 1, 0, 1, 2, 3, 0, 2, 1, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 2, 0],
         July: [0, 1, 0, 1, 2, 3, 0, 1, 0, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 0, 2],
         August: [0, 1, 0, 1, 2, 3, 0, 1, 0, 2, 0, 3, 4, 0, 3, 0, 2, 3, 0, 4, 0, 0, 1, 2, 1, 2, 4, 0, 1, 0, 2],
@@ -48,11 +113,11 @@ const ThreatCalendar = () => {
     // Get color based on threat level
     const getThreatColor = (level) => {
         const colors = {
-            0: 'bg-white', // No threat
-            1: 'bg-blue-100', // Low
-            2: 'bg-blue-300', // Medium
-            3: 'bg-blue-500', // High
-            4: 'bg-blue-600', // Critical
+            0: 'bg-[#0069F71A]', // No threat
+            1: 'bg-[#0069F766]', // Low
+            2: 'bg-[#0069F766]', // Medium
+            3: 'bg-[#0069F7]', // High
+            4: 'bg-[#0069F7]', // Critical
         };
         return colors[level] || 'bg-white';
     };
@@ -143,7 +208,7 @@ const ThreatCalendar = () => {
                 <div
                     key={day}
                     onClick={(e) => handleDateClick(name, day, threatLevel, e)}
-                    className={`aspect-square flex items-center justify-center text-xs font-medium rounded-full cursor-pointer transition-all hover:ring-2 hover:ring-blue-400 hover:ring-offset-1 ${colorClass} ${isToday ? 'ring-2 ring-blue-600' : ''
+                    className={`aspect-square flex items-center justify-center text-xs font-normal rounded-full cursor-pointer transition-all hover:ring-2 hover:ring-blue-400 hover:ring-offset-1 ${colorClass} ${isToday ? 'ring-2 ring-blue-600' : ''
                         } ${threatLevel >= 3 ? 'text-white' : 'text-gray-700'}`}
                 >
                     {day}
@@ -154,13 +219,13 @@ const ThreatCalendar = () => {
         return (
             <div key={name} className="w-full">
                 <div className="mb-4">
-                    <h3 className="text-sm font-semibold text-gray-700 text-center">{name}</h3>
+                    <h3 className="text-sm font-semibold text-center text-gray-700">{name}</h3>
                 </div>
 
                 {/* Day headers */}
                 <div className="grid grid-cols-7 gap-1 mb-2">
                     {daysOfWeek.map((day) => (
-                        <div key={day} className="text-xs font-medium text-gray-500 text-center">
+                        <div key={day} className="text-xs font-medium text-center text-gray-500">
                             {day}
                         </div>
                     ))}
@@ -176,19 +241,19 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-5">
                 {/* Header */}
-                <div className="flex justify-between items-start mb-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-900 mb-1">Threat Detection</h1>
-                        <p className="text-sm text-gray-600">Real-time monitoring and identification of potential risks</p>
+                        <h1 className="mb-1 text-xl font-bold text-gray-900 sm:text-2xl">Threat Detection {selectedYear !== 'This Year' && `- ${selectedYear}`}</h1>
+                        <p className="text-xs text-gray-600 sm:text-sm">Real-time monitoring and identification of potential risks</p>
                     </div>
 
                     {/* Year selector */}
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="px-4 py-2 pr-10 border border-gray-300 rounded-lg text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer"
+                        className="w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',
@@ -198,29 +263,33 @@ const ThreatCalendar = () => {
                     >
                         <option>This Year</option>
                         <option>Last Year</option>
+                        <option>2024</option>
+                        <option>2023</option>
                         <option>2022</option>
-                        <option>2021</option>
                     </select>
                 </div>
 
+                <div className='h-[1px] bg-[#EAEAEA] w-full my-5'></div>
+
+
                 {/* Calendar Grid */}
-                <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-4' :
-                    viewPeriod === 8 ? 'grid-cols-4' :
-                        'grid-cols-4'
+                <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                    viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                        'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                     }`}>
                     {monthsData.map((month, index) => renderMonth(month, index))}
                 </div>
 
                 {/* Footer Controls */}
-                <div className="flex justify-end items-center gap-4 pt-4 border-t border-gray-200">
-                    <span className="text-sm text-gray-600 font-medium">Viewing</span>
+                <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
+                    <span className="text-sm font-normal text-center text-[#000000] sm:text-left">Viewing</span>
 
-                    <div className="flex gap-2">
+                    <div className="flex justify-center gap-2 sm:justify-start">
                         <button
                             onClick={() => setViewPeriod(4)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
-                                ? 'bg-blue-600 text-white shadow-sm'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-sm font-normal rounded-[5px] transition-all ${viewPeriod === 4
+                                ? 'bg-[#0069F7] text-white shadow-sm'
+                                : 'bg-[#EBEBEB] text-[#000000] hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
@@ -228,7 +297,7 @@ const ThreatCalendar = () => {
 
                         <button
                             onClick={() => setViewPeriod(8)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
                                 ? 'bg-blue-600 text-white shadow-sm'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
@@ -238,7 +307,7 @@ const ThreatCalendar = () => {
 
                         <button
                             onClick={() => setViewPeriod(12)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
                                 ? 'bg-blue-600 text-white shadow-sm'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
@@ -248,6 +317,7 @@ const ThreatCalendar = () => {
                     </div>
                 </div>
             </div>
+
 
             {/* Modal */}
             {isModalOpen && selectedDate && (
@@ -262,14 +332,14 @@ const ThreatCalendar = () => {
                     <div
                         className="fixed z-50"
                         style={{
-                            left: `${modalPosition.x}px`,
-                            top: `${modalPosition.y + 79}px`,
+                            left: `${modalPosition.x + 30}px`,
+                            top: `${modalPosition.y + 180}px`,
                         }}
                     >
-                        <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 relative">
+                        <div className="relative p-6 bg-white shadow-2xl rounded-2xl w-[250px]">
                             {/* Pointer Arrow */}
                             <div
-                                className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rotate-45 shadow-lg"
+                                className="absolute w-6 h-6 transform rotate-45 -translate-x-1/2 bg-white shadow-lg -bottom-3 left-1/2"
                                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
                             />
 
@@ -280,7 +350,7 @@ const ThreatCalendar = () => {
                             <div className="flex gap-x-2.5 items-center gap-3 mb-5">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="30" height="30" rx="15" fill="#009957" />
-                                    <path d="M18.3333 7.5V10.8333M11.6666 7.5V10.8333M8.33331 14.1667H21.6666M14.1666 17.5H15V20M8.33331 10.8333C8.33331 10.3913 8.50891 9.96738 8.82147 9.65482C9.13403 9.34226 9.55795 9.16667 9.99998 9.16667H20C20.442 9.16667 20.8659 9.34226 21.1785 9.65482C21.4911 9.96738 21.6666 10.3913 21.6666 10.8333V20.8333C21.6666 21.2754 21.4911 21.6993 21.1785 22.0118C20.8659 22.3244 20.442 22.5 20 22.5H9.99998C9.55795 22.5 9.13403 22.3244 8.82147 22.0118C8.50891 21.6993 8.33331 21.2754 8.33331 20.8333V10.8333Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M18.3333 7.5V10.8333M11.6666 7.5V10.8333M8.33331 14.1667H21.6666M14.1666 17.5H15V20M8.33331 10.8333C8.33331 10.3913 8.50891 9.96738 8.82147 9.65482C9.13403 9.34226 9.55795 9.16667 9.99998 9.16667H20C20.442 9.16667 20.8659 9.34226 21.1785 9.65482C21.4911 9.96738 21.6666 10.3913 21.6666 10.8333V20.8333C21.6666 21.2754 21.4911 21.6993 21.1785 22.0118C20.8659 22.3244 20.442 22.5 20 22.5H9.99998C9.55795 22.5 9.13403 22.3244 8.82147 22.0118C8.50891 21.6993 8.33331 21.2754 8.33331 20.8333V10.8333Z" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
 
                                 <div>
