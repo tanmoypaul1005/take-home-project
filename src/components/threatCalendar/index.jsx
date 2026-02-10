@@ -263,8 +263,9 @@ const ThreatCalendar = () => {
                     >
                         <option>This Year</option>
                         <option>Last Year</option>
+                        <option>2024</option>
+                        <option>2023</option>
                         <option>2022</option>
-                        <option>2021</option>
                     </select>
                 </div>
 
