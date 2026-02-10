@@ -114,9 +114,9 @@ const ThreatCalendar = () => {
     const getThreatColor = (level) => {
         const colors = {
             0: 'bg-[#0069F71A]', // No threat
-            1: 'bg-blue-100', // Low
-            2: 'bg-blue-300', // Medium
-            3: 'bg-blue-[#0069F7]', // High
+            1: 'bg-[#0069F766]', // Low
+            2: 'bg-[#0069F766]', // Medium
+            3: 'bg-[#0069F7]', // High
             4: 'bg-[#0069F7]', // Critical
         };
         return colors[level] || 'bg-white';
@@ -208,7 +208,7 @@ const ThreatCalendar = () => {
                 <div
                     key={day}
                     onClick={(e) => handleDateClick(name, day, threatLevel, e)}
-                    className={`aspect-square flex items-center justify-center text-xs font-medium rounded-full cursor-pointer transition-all hover:ring-2 hover:ring-blue-400 hover:ring-offset-1 ${colorClass} ${isToday ? 'ring-2 ring-blue-600' : ''
+                    className={`aspect-square flex items-center justify-center text-xs font-normal rounded-full cursor-pointer transition-all hover:ring-2 hover:ring-blue-400 hover:ring-offset-1 ${colorClass} ${isToday ? 'ring-2 ring-blue-600' : ''
                         } ${threatLevel >= 3 ? 'text-white' : 'text-gray-700'}`}
                 >
                     {day}
