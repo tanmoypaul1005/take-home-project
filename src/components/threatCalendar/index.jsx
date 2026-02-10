@@ -271,13 +271,12 @@ const ThreatCalendar = () => {
 
                 <div className='h-[1px] bg-[#EAEAEA] w-full my-5'></div>
 
-
                 {/* Calendar Grid */}
                 <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
                     viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
                         'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                     }`}>
-                    {monthsData.map((month, index) => renderMonth(month, index))}
+                    {monthsData?.map((month, index) => renderMonth(month, index))}
                 </div>
 
                 {/* Footer Controls */}
@@ -384,13 +383,13 @@ const ThreatCalendar = () => {
                                 {/* Medium */}
                                 <div className="text-xs font-normal bg-[#FFEDCC] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
                                     <span className="text-gray-900">Medium</span>
-                                    <span className="text-yellow-600">{selectedDate.medium}</span>
+                                    <span className="">{selectedDate.medium}</span>
                                 </div>
 
                                 {/* Low */}
-                                <div className="text-xs font-normal bg-[#CCFFE9] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
-                                    <span className="text-gray-900">Low</span>
-                                    <span className="text-green-500">{selectedDate.low}</span>
+                                <div className="text-xs font-normal bg-[#CCFFE9] text-[#000000] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
+                                    <span className="">Low</span>
+                                    <span className="">{selectedDate.low}</span>
                                 </div>
                             </div>
 
