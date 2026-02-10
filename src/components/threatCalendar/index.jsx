@@ -218,9 +218,9 @@ const ThreatCalendar = () => {
                     <div className="flex justify-center gap-2 sm:justify-start">
                         <button
                             onClick={() => setViewPeriod(4)}
-                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-sm font-normal rounded-[5px] transition-all ${viewPeriod === 4
                                     ? 'bg-[#0069F7] text-white shadow-sm'
-                                    : 'bg-[#EBEBEB] text-gray-700 hover:bg-gray-200'
+                                    : 'bg-[#EBEBEB] text-[#000000] hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
