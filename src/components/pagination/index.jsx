@@ -69,9 +69,9 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                     <button
                         key={page}
                         onClick={() => handlePageChange(page)}
-                        className={`px-3 py-1 rounded text-sm font-medium ${currentPage === page
-                            ? 'bg-blue-600 text-white'
-                            : 'border border-gray-300 hover:bg-gray-50'
+                        className={`px-3 py-1 rounded text-base font-normal ${currentPage === page
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-[#EBEBEB] hover:bg-gray-50'
                             }`}
                     >
                         {page}
@@ -88,7 +88,7 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 <button
                     onClick={goToLastPage}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm bg-[#EBEBEB] rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &gt;&gt;
                 </button>
