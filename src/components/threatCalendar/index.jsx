@@ -241,7 +241,7 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-4 bg-white rounded-lg shadow-sm sm:p-5">
+            <div className="p-4 bg-white rounded-[10px] shadow-sm sm:p-5">
                 {/* Header */}
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>

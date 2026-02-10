@@ -81,7 +81,7 @@ const ThreatsTable = () => {
 
 
     return (
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
+        <div className="bg-white border border-gray-200 rounded-[10px] shadow-sm">
             <div className="p-5 border-b border-gray-200">
                 <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
                     <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
