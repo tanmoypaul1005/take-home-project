@@ -241,7 +241,7 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-5">
+            <div className="p-4 bg-white rounded-lg shadow-sm sm:p-5">
                 {/* Header */}
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
@@ -272,7 +272,7 @@ const ThreatCalendar = () => {
                 <div className='h-[1px] bg-[#EAEAEA] w-full my-5'></div>
 
                 {/* Calendar Grid */}
-                <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                <div className={`grid gap-6 mb-[30px] ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
                     viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
                         'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                     }`}>
@@ -280,7 +280,7 @@ const ThreatCalendar = () => {
                 </div>
 
                 {/* Footer Controls */}
-                <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
                     <span className="text-sm font-normal text-center text-[#000000] sm:text-left">Viewing</span>
 
                     <div className="flex justify-center gap-2 sm:justify-start">
