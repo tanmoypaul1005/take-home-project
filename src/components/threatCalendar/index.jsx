@@ -176,19 +176,19 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6">
                 {/* Header */}
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-start sm:justify-between">
                     <div>
-                        <h1 className="mb-1 text-2xl font-bold text-gray-900">Threat Detection</h1>
-                        <p className="text-sm text-gray-600">Real-time monitoring and identification of potential risks</p>
+                        <h1 className="mb-1 text-xl font-bold text-gray-900 sm:text-2xl">Threat Detection</h1>
+                        <p className="text-xs text-gray-600 sm:text-sm">Real-time monitoring and identification of potential risks</p>
                     </div>
 
                     {/* Year selector */}
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',
@@ -204,23 +204,23 @@ const ThreatCalendar = () => {
                 </div>
 
                 {/* Calendar Grid */}
-                <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-4' :
-                    viewPeriod === 8 ? 'grid-cols-4' :
-                        'grid-cols-4'
+                <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                        viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                            'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                     }`}>
                     {monthsData.map((month, index) => renderMonth(month, index))}
                 </div>
 
                 {/* Footer Controls */}
-                <div className="flex items-center justify-end gap-4 pt-4 border-t border-gray-200">
-                    <span className="text-sm font-medium text-gray-600">Viewing</span>
+                <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
+                    <span className="text-sm font-medium text-center text-gray-600 sm:text-left">Viewing</span>
 
-                    <div className="flex gap-2">
+                    <div className="flex justify-center gap-2 sm:justify-start">
                         <button
                             onClick={() => setViewPeriod(4)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
-                                ? 'bg-blue-600 text-white shadow-sm'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
@@ -228,9 +228,9 @@ const ThreatCalendar = () => {
 
                         <button
                             onClick={() => setViewPeriod(8)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
-                                ? 'bg-blue-600 text-white shadow-sm'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             8 Months
@@ -238,9 +238,9 @@ const ThreatCalendar = () => {
 
                         <button
                             onClick={() => setViewPeriod(12)}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
-                                ? 'bg-blue-600 text-white shadow-sm'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             12 Months
@@ -248,6 +248,7 @@ const ThreatCalendar = () => {
                     </div>
                 </div>
             </div>
+
 
             {/* Modal */}
             {isModalOpen && selectedDate && (
