@@ -218,8 +218,8 @@ const ThreatCalendar = () => {
 
         return (
             <div key={name} className="w-full">
-                <div className="mb-4">
-                    <h3 className="text-sm font-semibold text-center text-gray-700">{name}</h3>
+                <div className="mb-3">
+                    <h3 className="text-xs font-normal text-center text-[#000000]">{name}</h3>
                 </div>
 
                 {/* Day headers */}

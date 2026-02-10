@@ -38,11 +38,11 @@ function App() {
       )}
 
       {/* Sidebar */}
-      <SideBar 
+      <SideBar
         selectedMenu={selectedMenu}
-        setSelectedMenu={setSelectedMenu} 
+        setSelectedMenu={setSelectedMenu}
         sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen} 
+        setSidebarOpen={setSidebarOpen}
       />
 
       {/* Main Content */}
@@ -53,16 +53,23 @@ function App() {
         {/* Dashboard Content */}
         <main className="flex-1 p-4 sm:p-6 lg:pt-5 lg:pb-8 lg:px-[30px] overflow-y-auto">
           {/* Threat Detection Cards */}
-          <div className="mb-8">
-            <div className="mb-5 text-xs font-medium">Dashboard &gt; <span className="text-[#0069F7] ">Dashboard</span></div>
-            <ThreatCalendar 
+          <div className="mb-5">
+            <div className="flex mb-5 text-xs font-medium gap-x-[5px]">
+              Dashboard
+              <div className='mt-1'>
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.78125 8.78125L4.78125 4.78125L0.78125 0.78125" stroke="#2E3950" stroke-width="1.5625" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <span className="text-[#0069F7] text-xs font-medium">Dashboard</span></div>
+            <ThreatCalendar
               generateCalendarDays={generateCalendarDays}
               getIntensityColor={getIntensityColor}
             />
           </div>
 
           {/* Top Threats Table */}
-          <ThreatsTable  />
+          <ThreatsTable />
         </main>
 
       </div>

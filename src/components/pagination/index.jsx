@@ -48,19 +48,19 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
     }
 
     return (
-        <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+        <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
             <div className="flex items-center space-x-2">
                 <button
                     onClick={goToPrevPage}
                     disabled={currentPage === 1}
-                    className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;
                 </button>
                 <button
                     onClick={goToFirstPage}
                     disabled={currentPage === 1}
-                    className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;&lt;
                 </button>
@@ -70,8 +70,8 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                         key={page}
                         onClick={() => handlePageChange(page)}
                         className={`px-3 py-1 rounded text-sm font-medium ${currentPage === page
-                                ? 'bg-blue-600 text-white'
-                                : 'border border-gray-300 hover:bg-gray-50'
+                            ? 'bg-blue-600 text-white'
+                            : 'border border-gray-300 hover:bg-gray-50'
                             }`}
                     >
                         {page}
@@ -81,34 +81,66 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 <button
                     onClick={goToNextPage}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &gt;
                 </button>
                 <button
                     onClick={goToLastPage}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &gt;&gt;
                 </button>
             </div>
-            <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-700">
-                    Viewing <span className="font-medium">{itemsPerPage}</span>
-                </span>
-                <span className="text-sm text-gray-700">of</span>
-                <select
-                    value={itemsPerPage}
-                    onChange={handleItemsPerPageChange}
-                    className="px-2 py-1 border border-gray-300 rounded text-sm"
-                >
-                    <option value={10}>10</option>
-                    <option value={25}>25</option>
-                    <option value={50}>50</option>
-                    <option value={100}>100</option>
-                </select>
+
+            <div className="flex items-center gap-3">
+                <span className="text-sm font-normal text-[#000000]">Viewing</span>
+
+                <div className='flex gap-x-1'>
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '10' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 10
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        10
+                    </button>
+
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '25' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 25
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        25
+                    </button>
+
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '50' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 50
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        50
+                    </button>
+
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '100' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 100
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        100
+                    </button>
+                </div>
+
             </div>
+
         </div>
     )
 }
