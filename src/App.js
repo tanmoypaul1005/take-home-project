@@ -51,7 +51,7 @@ function App() {
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         {/* Dashboard Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:pt-8 lg:pb-8 lg:px-[30px] overflow-y-auto">
+        <main className="flex-1 p-4 sm:p-6 lg:pt-5 lg:pb-8 lg:px-[30px] overflow-y-auto">
           {/* Threat Detection Cards */}
           <div className="mb-8">
             <div className="mb-5 text-xs font-medium">Dashboard &gt; <span className="text-[#0069F7] ">Dashboard</span></div>
