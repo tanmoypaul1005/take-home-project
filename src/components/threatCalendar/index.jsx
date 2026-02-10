@@ -11,23 +11,42 @@ const ThreatCalendar = () => {
     const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
     // Calendar data for all 12 months (starting day of week and number of days)
+    // startDay: 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
     const allMonthsData = [
-        { name: 'January', startDay: 0, days: 31 },
-        { name: 'February', startDay: 3, days: 29 },
-        { name: 'March', startDay: 4, days: 31 },
-        { name: 'April', startDay: 0, days: 30 },
-        { name: 'May', startDay: 2, days: 31 },
-        { name: 'June', startDay: 5, days: 30 },
-        { name: 'July', startDay: 0, days: 31 },
-        { name: 'August', startDay: 3, days: 31 },
-        { name: 'September', startDay: 6, days: 30 },
-        { name: 'October', startDay: 1, days: 31 },
-        { name: 'November', startDay: 4, days: 30 },
-        { name: 'December', startDay: 6, days: 31 },
+        { name: 'January', startDay: 3, days: 31 },      // Thursday
+        { name: 'February', startDay: 6, days: 29 },     // Sunday
+        { name: 'March', startDay: 0, days: 31 },        // Monday
+        { name: 'April', startDay: 3, days: 30 },        // Thursday
+        { name: 'May', startDay: 5, days: 31 },          // Saturday
+        { name: 'June', startDay: 1, days: 30 },         // Tuesday
+        { name: 'July', startDay: 3, days: 31 },         // Thursday
+        { name: 'August', startDay: 6, days: 31 },       // Sunday
+        { name: 'September', startDay: 2, days: 30 },    // Wednesday
+        { name: 'October', startDay: 4, days: 31 },      // Friday
+        { name: 'November', startDay: 0, days: 30 },     // Monday
+        { name: 'December', startDay: 2, days: 31 },     // Wednesday
     ];
 
-    // Get months based on view period
-    const monthsData = allMonthsData.slice(0, viewPeriod);
+    // Get calendar data adjusted for selected year
+    const getCalendarDataForYear = (year) => {
+        const yearOffsets = {
+            'This Year': 0,
+            'Last Year': 1,
+            '2022': 3,
+            '2021': 4
+        };
+        
+        const offset = yearOffsets[year] || 0;
+        
+        return allMonthsData.map(month => ({
+            ...month,
+            startDay: (month.startDay + offset) % 7
+        }));
+    };
+
+    // Get months based on view period and selected year
+    const adjustedMonthsData = getCalendarDataForYear(selectedYear);
+    const monthsData = adjustedMonthsData.slice(0, viewPeriod);
 
     // Simulated threat data - days with threats (0-4 intensity levels) for all 12 months
     const threatData = {
@@ -281,7 +300,7 @@ const ThreatCalendar = () => {
                             <div className="flex gap-x-2.5 items-center gap-3 mb-5">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="30" height="30" rx="15" fill="#009957" />
-                                    <path d="M18.3333 7.5V10.8333M11.6666 7.5V10.8333M8.33331 14.1667H21.6666M14.1666 17.5H15V20M8.33331 10.8333C8.33331 10.3913 8.50891 9.96738 8.82147 9.65482C9.13403 9.34226 9.55795 9.16667 9.99998 9.16667H20C20.442 9.16667 20.8659 9.34226 21.1785 9.65482C21.4911 9.96738 21.6666 10.3913 21.6666 10.8333V20.8333C21.6666 21.2754 21.4911 21.6993 21.1785 22.0118C20.8659 22.3244 20.442 22.5 20 22.5H9.99998C9.55795 22.5 9.13403 22.3244 8.82147 22.0118C8.50891 21.6993 8.33331 21.2754 8.33331 20.8333V10.8333Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M18.3333 7.5V10.8333M11.6666 7.5V10.8333M8.33331 14.1667H21.6666M14.1666 17.5H15V20M8.33331 10.8333C8.33331 10.3913 8.50891 9.96738 8.82147 9.65482C9.13403 9.34226 9.55795 9.16667 9.99998 9.16667H20C20.442 9.16667 20.8659 9.34226 21.1785 9.65482C21.4911 9.96738 21.6666 10.3913 21.6666 10.8333V20.8333C21.6666 21.2754 21.4911 21.6993 21.1785 22.0118C20.8659 22.3244 20.442 22.5 20 22.5H9.99998C9.55795 22.5 9.13403 22.3244 8.82147 22.0118C8.50891 21.6993 8.33331 21.2754 8.33331 20.8333V10.8333Z" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
 
                                 <div>
