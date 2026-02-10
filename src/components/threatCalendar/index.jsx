@@ -346,7 +346,7 @@ const ThreatCalendar = () => {
                             <h2 className="text-base font-semibold text-[#000000] mb-1">Threats Detection</h2>
 
                             {/* Date Badge */}
-                            <div className="flex gap-x-2.5 items-center gap-3 mb-5">
+                            <div className="flex gap-x-2.5 items-center gap-3">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="30" height="30" rx="15" fill="#009957" />
                                     <path d="M18.3333 7.5V10.8333M11.6666 7.5V10.8333M8.33331 14.1667H21.6666M14.1666 17.5H15V20M8.33331 10.8333C8.33331 10.3913 8.50891 9.96738 8.82147 9.65482C9.13403 9.34226 9.55795 9.16667 9.99998 9.16667H20C20.442 9.16667 20.8659 9.34226 21.1785 9.65482C21.4911 9.96738 21.6666 10.3913 21.6666 10.8333V20.8333C21.6666 21.2754 21.4911 21.6993 21.1785 22.0118C20.8659 22.3244 20.442 22.5 20 22.5H9.99998C9.55795 22.5 9.13403 22.3244 8.82147 22.0118C8.50891 21.6993 8.33331 21.2754 8.33331 20.8333V10.8333Z" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
@@ -360,16 +360,18 @@ const ThreatCalendar = () => {
                             </div>
 
                             {/* Total Threats */}
-                            <div className="bg-[#FFE8CD] rounded-xl p-2.5 mb-3 flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="10" cy="10" r="9" stroke="#F59E0B" strokeWidth="2" />
-                                        <path d="M10 6V11" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
-                                        <circle cx="10" cy="14" r="0.5" fill="#F59E0B" />
-                                    </svg>
-                                    <span className="font-semibold text-[10px] text-[#000000]">Total Threats Detected</span>
+                            <div className='border-t border-b border-[#F4F1F1] py-2.5 my-[15px]'>
+                                <div className="bg-[#FFE8CD] rounded-xl p-2.5 flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="10" cy="10" r="9" stroke="#F59E0B" strokeWidth="2" />
+                                            <path d="M10 6V11" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
+                                            <circle cx="10" cy="14" r="0.5" fill="#F59E0B" />
+                                        </svg>
+                                        <span className="font-semibold text-[10px] text-[#000000]">Total Threats Detected</span>
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#FF8A00]">{selectedDate.total}</span>
                                 </div>
-                                <span className="text-xs font-semibold text-[#FF8A00]">{selectedDate.total}</span>
                             </div>
 
                             {/* Threat Levels */}
