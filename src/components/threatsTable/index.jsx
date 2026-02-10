@@ -13,17 +13,17 @@ const ThreatsTable = () => {
     // Calculate pagination
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
-    
+
     // Filter threats based on selected filters
     const filteredThreats = threats.filter(threat => {
         const matchesThreat = selectedThreat === 'Select Threat' || threat.threat === selectedThreat
         const matchesCountry = selectedCountry === 'Country' || threat.country === selectedCountry
         const matchesRisk = selectedRisk === 'Select Risk' || threat.risk === selectedRisk
         // Date range filtering can be added later with actual date logic
-        
+
         return matchesThreat && matchesCountry && matchesRisk
     })
-    
+
     const currentThreats = filteredThreats.slice(indexOfFirstItem, indexOfLastItem)
 
     const handlePageChange = (page) => {
@@ -37,31 +37,31 @@ const ThreatsTable = () => {
 
     // Reset to page 1 when filters change
     const handleThreatChange = (value) => {
-        setSelectedThreat(value)
+        setSelectedThreat(value.target.value)
         setCurrentPage(1)
     }
 
     const handleCountryChange = (value) => {
-        setSelectedCountry(value)
+        setSelectedCountry(value?.target.value)
         setCurrentPage(1)
     }
 
     const handleRiskChange = (value) => {
-        setSelectedRisk(value)
+        setSelectedRisk(value.target.value)
         setCurrentPage(1)
     }
 
     const handleDateRangeChange = (value) => {
-        setSelectedDateRange(value)
+        setSelectedDateRange(value.target.value)
         setCurrentPage(1)
     }
 
 
 
     return (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
             <div className="p-5 border-b border-gray-200">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+                <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
                     <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
                     <div className="flex flex-wrap gap-3">
                         {/* Select Threat Dropdown */}
@@ -90,14 +90,14 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
-                             value={selectedCountry}
+                            value={selectedCountry}
                             onChange={handleCountryChange}
                         >
                             <option>Country</option>
+                            <option>Nepal</option>
+                            <option>India</option>
                             <option>United States</option>
-                            <option>United Kingdom</option>
-                            <option>Canada</option>
-                            <option>Australia</option>
+                            <option>Singapore</option>
                         </select>
 
                         {/* Select Risk Dropdown */}
@@ -108,7 +108,7 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
-                             value={selectedRisk}
+                            value={selectedRisk}
                             onChange={handleRiskChange}
                         >
                             <option>Select Risk</option>
@@ -126,7 +126,7 @@ const ThreatsTable = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '1.5em 1.5em'
                             }}
-                              value={selectedDateRange}
+                            value={selectedDateRange}
                             onChange={handleDateRangeChange}
                         >
                             <option>From Date - To Date</option>
@@ -160,7 +160,7 @@ const ThreatsTable = () => {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                         {currentThreats?.map((threat, index) => (
-                            <tr key={index} className="hover:bg-gray-50 transition-colors">
+                            <tr key={index} className="transition-colors hover:bg-gray-50">
                                 <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.timestamp}</td>
                                 <td className="px-6 flex py-4 whitespace-nowrap text-xs font-normal text-[#000000]">
                                     <span className="mr-2">{threat?.flag}</span>
