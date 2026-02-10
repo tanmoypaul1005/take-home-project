@@ -94,46 +94,51 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 </button>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
                 <span className="text-sm font-normal text-[#000000]">Viewing</span>
-                <button
-                    onClick={() => handleItemsPerPageChange({ target: { value: '10' } })}
-                    className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 10
-                        ? 'bg-[#0069F7] text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                >
-                    10
-                </button>
 
-                <button
-                    onClick={() => handleItemsPerPageChange({ target: { value: '25' } })}
-                    className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 25
-                        ? 'bg-[#0069F7] text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                >
-                    25
-                </button>
+                <div className='flex gap-x-1'>
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '10' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 10
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        10
+                    </button>
 
-                <button
-                    onClick={() => handleItemsPerPageChange({ target: { value: '50' } })}
-                    className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 50
-                        ? 'bg-[#0069F7] text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                >
-                    50
-                </button>
-                <button
-                    onClick={() => handleItemsPerPageChange({ target: { value: '100' } })}
-                    className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 100
-                        ? 'bg-[#0069F7] text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                >
-                    100
-                </button>
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '25' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 25
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        25
+                    </button>
+
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '50' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 50
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        50
+                    </button>
+
+                    <button
+                        onClick={() => handleItemsPerPageChange({ target: { value: '100' } })}
+                        className={`px-2.5 py-[5px] text-sm font-normal rounded-[5px] transition-colors ${itemsPerPage === 100
+                            ? 'bg-[#0069F7] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        100
+                    </button>
+                </div>
+
             </div>
 
         </div>
