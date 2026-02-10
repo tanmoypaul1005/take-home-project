@@ -53,14 +53,14 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 <button
                     onClick={goToPrevPage}
                     disabled={currentPage === 1}
-                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm bg-[#EBEBEB] rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;
                 </button>
                 <button
                     onClick={goToFirstPage}
                     disabled={currentPage === 1}
-                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm bg-[#EBEBEB] rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &lt;&lt;
                 </button>
@@ -81,7 +81,7 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
                 <button
                     onClick={goToNextPage}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1 text-sm bg-[#EBEBEB]  rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     &gt;
                 </button>
