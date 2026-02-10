@@ -86,7 +86,7 @@ const ThreatCalendar = () => {
                 { name: 'December', startDay: 3, days: 31 },     // Thursday
             ],
         };
-        
+
         return yearData[year] || yearData['This Year'];
     };
 
@@ -241,9 +241,9 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-5">
                 {/* Header */}
-                <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                         <h1 className="mb-1 text-xl font-bold text-gray-900 sm:text-2xl">Threat Detection {selectedYear !== 'This Year' && `- ${selectedYear}`}</h1>
                         <p className="text-xs text-gray-600 sm:text-sm">Real-time monitoring and identification of potential risks</p>
@@ -269,10 +269,13 @@ const ThreatCalendar = () => {
                     </select>
                 </div>
 
+                <div className='h-[1px] bg-[#EAEAEA] w-full my-5'></div>
+
+
                 {/* Calendar Grid */}
                 <div className={`grid gap-6 mb-6 ${viewPeriod === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
-                        viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
-                            'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+                    viewPeriod === 8 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' :
+                        'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                     }`}>
                     {monthsData.map((month, index) => renderMonth(month, index))}
                 </div>
@@ -285,8 +288,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(4)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-sm font-normal rounded-[5px] transition-all ${viewPeriod === 4
-                                    ? 'bg-[#0069F7] text-white shadow-sm'
-                                    : 'bg-[#EBEBEB] text-[#000000] hover:bg-gray-200'
+                                ? 'bg-[#0069F7] text-white shadow-sm'
+                                : 'bg-[#EBEBEB] text-[#000000] hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
@@ -295,8 +298,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(8)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 8
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             8 Months
@@ -305,8 +308,8 @@ const ThreatCalendar = () => {
                         <button
                             onClick={() => setViewPeriod(12)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 12
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             12 Months
@@ -329,7 +332,7 @@ const ThreatCalendar = () => {
                     <div
                         className="fixed z-50"
                         style={{
-                            left: `${modalPosition.x+30}px`,
+                            left: `${modalPosition.x + 30}px`,
                             top: `${modalPosition.y + 180}px`,
                         }}
                     >
