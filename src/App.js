@@ -53,7 +53,7 @@ function App() {
         {/* Dashboard Content */}
         <main className="flex-1 p-4 sm:p-6 lg:pt-5 lg:pb-8 lg:px-[30px] overflow-y-auto">
           {/* Threat Detection Cards */}
-          <div className="mb-8">
+          <div className="mb-5">
             <div className="flex mb-5 text-xs font-medium gap-x-[5px]">
               Dashboard
               <div className='mt-1'>
