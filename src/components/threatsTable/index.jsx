@@ -3,16 +3,12 @@ import Pagination from '../pagination'
 import { threats } from './data'
 
 const ThreatsTable = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+const [currentPage, setCurrentPage] = useState(1)
     const [itemsPerPage, setItemsPerPage] = useState(10)
     const [selectedThreat, setSelectedThreat] = useState('Select Threat')
     const [selectedCountry, setSelectedCountry] = useState('Country')
     const [selectedRisk, setSelectedRisk] = useState('Select Risk')
     const [selectedDateRange, setSelectedDateRange] = useState('From Date - To Date')
-
-    // Calculate pagination
-    const indexOfLastItem = currentPage * itemsPerPage
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage
 
     // Filter threats based on selected filters
     const filteredThreats = threats.filter(threat => {
@@ -24,6 +20,9 @@ const ThreatsTable = () => {
         return matchesThreat && matchesCountry && matchesRisk
     })
 
+    // Calculate pagination on filtered data
+    const indexOfLastItem = currentPage * itemsPerPage
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentThreats = filteredThreats.slice(indexOfFirstItem, indexOfLastItem)
 
     const handlePageChange = (page) => {
@@ -32,30 +31,29 @@ const ThreatsTable = () => {
 
     const handleItemsPerPageChange = (newItemsPerPage) => {
         setItemsPerPage(newItemsPerPage)
-        setCurrentPage(1) // Reset to first page when items per page changes
+        setCurrentPage(1)
     }
 
     // Reset to page 1 when filters change
-    const handleThreatChange = (value) => {
-        setSelectedThreat(value.target.value)
+    const handleThreatChange = (e) => {
+        setSelectedThreat(e.target.value)
         setCurrentPage(1)
     }
 
-    const handleCountryChange = (value) => {
-        setSelectedCountry(value?.target.value)
+    const handleCountryChange = (e) => {
+        setSelectedCountry(e.target.value)
         setCurrentPage(1)
     }
 
-    const handleRiskChange = (value) => {
-        setSelectedRisk(value.target.value)
+    const handleRiskChange = (e) => {
+        setSelectedRisk(e.target.value)
         setCurrentPage(1)
     }
 
-    const handleDateRangeChange = (value) => {
-        setSelectedDateRange(value.target.value)
+    const handleDateRangeChange = (e) => {
+        setSelectedDateRange(e.target.value)
         setCurrentPage(1)
     }
-
 
 
     return (
@@ -133,7 +131,6 @@ const ThreatsTable = () => {
                             <option>Last 7 Days</option>
                             <option>Last 30 Days</option>
                             <option>Last 90 Days</option>
-                            <option>Custom Range</option>
                         </select>
 
                         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">

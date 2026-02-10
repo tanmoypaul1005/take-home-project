@@ -213,14 +213,14 @@ const ThreatCalendar = () => {
 
                 {/* Footer Controls */}
                 <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
-                    <span className="text-sm font-medium text-center text-gray-600 sm:text-left">Viewing</span>
+                    <span className="text-sm font-normal text-center text-[#000000] sm:text-left">Viewing</span>
 
                     <div className="flex justify-center gap-2 sm:justify-start">
                         <button
                             onClick={() => setViewPeriod(4)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all ${viewPeriod === 4
-                                    ? 'bg-blue-600 text-white shadow-sm'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                    ? 'bg-[#0069F7] text-white shadow-sm'
+                                    : 'bg-[#EBEBEB] text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
