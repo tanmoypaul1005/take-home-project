@@ -15,9 +15,24 @@ const ThreatsTable = () => {
         const matchesThreat = selectedThreat === 'Select Threat' || threat.threat === selectedThreat
         const matchesCountry = selectedCountry === 'Country' || threat.country === selectedCountry
         const matchesRisk = selectedRisk === 'Select Risk' || threat.risk === selectedRisk
-        // Date range filtering can be added later with actual date logic
+        
+        // Date range filtering
+        let matchesDateRange = true
+        if (selectedDateRange !== 'From Date - To Date') {
+            const threatDate = new Date(threat.timestamp)
+            const currentDate = new Date()
+            const daysDifference = Math.floor((currentDate - threatDate) / (1000 * 60 * 60 * 24))
+            
+            if (selectedDateRange === 'Last 7 Days') {
+                matchesDateRange = daysDifference <= 7
+            } else if (selectedDateRange === 'Last 30 Days') {
+                matchesDateRange = daysDifference <= 30
+            } else if (selectedDateRange === 'Last 90 Days') {
+                matchesDateRange = daysDifference <= 90
+            }
+        }
 
-        return matchesThreat && matchesCountry && matchesRisk
+        return matchesThreat && matchesCountry && matchesRisk && matchesDateRange
     })
 
     // Calculate pagination on filtered data
@@ -55,7 +70,7 @@ const ThreatsTable = () => {
         setCurrentPage(1)
     }
 
-        // Reset all filters
+    // Reset all filters
     const handleResetFilters = () => {
         setSelectedThreat('Select Threat')
         setSelectedCountry('Country')
