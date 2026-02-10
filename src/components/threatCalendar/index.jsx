@@ -329,11 +329,11 @@ const ThreatCalendar = () => {
                     <div
                         className="fixed z-50"
                         style={{
-                            left: `${modalPosition.x+50}px`,
+                            left: `${modalPosition.x+30}px`,
                             top: `${modalPosition.y + 180}px`,
                         }}
                     >
-                        <div className="relative p-6 bg-white shadow-2xl rounded-2xl w-68">
+                        <div className="relative p-6 bg-white shadow-2xl rounded-2xl w-[250px]">
                             {/* Pointer Arrow */}
                             <div
                                 className="absolute w-6 h-6 transform rotate-45 -translate-x-1/2 bg-white shadow-lg -bottom-3 left-1/2"
