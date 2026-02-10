@@ -87,7 +87,7 @@ const ThreatsTable = () => {
                     <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
                     <div className="flex flex-wrap gap-3">
                         {/* Select Threat Dropdown */}
-                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                        <select className="px-4 py-2.5 pr-10 border border-[#D3D3D3] rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
                             style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                                 backgroundPosition: 'right 0.5rem center',
@@ -105,7 +105,7 @@ const ThreatsTable = () => {
                         </select>
 
                         {/* Country Dropdown */}
-                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                        <select className="px-4 py-2.5 pr-10 border border-[#D3D3D3]  rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
                             style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                                 backgroundPosition: 'right 0.5rem center',
@@ -123,7 +123,7 @@ const ThreatsTable = () => {
                         </select>
 
                         {/* Select Risk Dropdown */}
-                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
+                        <select className="px-4 py-2.5 pr-10 border border-[#D3D3D3]  rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
                             style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                                 backgroundPosition: 'right 0.5rem center',
@@ -141,7 +141,7 @@ const ThreatsTable = () => {
                         </select>
 
                         {/* From Date - To Date Dropdown */}
-                        <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[200px]"
+                        <select className="px-4 py-2.5 pr-10 border border-[#D3D3D3]  rounded-lg text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[200px]"
                             style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                                 backgroundPosition: 'right 0.5rem center',
