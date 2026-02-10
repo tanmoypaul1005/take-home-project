@@ -1,3 +1,4 @@
+
 const Header = ({ sidebarOpen, setSidebarOpen }) => {
     return (
         <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
@@ -23,10 +24,10 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
                     </div>
 
                     {/* Right Section */}
-                    <div className="flex items-center space-x-2 sm:space-x-4">
+                    <div className="flex items-center space-x-2 sm:space-x-6">
 
                         {/* Updated Time - Hidden on small mobile */}
-                        <div className="items-center hidden space-x-2 xs:flex">
+                        <div className="items-center hidden space-x-2 md:flex">
                             <svg className="w-8 h-8 sm:w-[45px] sm:h-[45px]" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="45" height="45" rx="22.5" fill="#E9EFF7" />
                                 <path d="M21.4583 18.3333V23.5417L25.8854 26.1667L26.6875 24.8333L23.0208 22.6562V18.3333H21.4583ZM31.875 20.4167V13.125L29.125 15.875C28.2575 15.0013 27.2252 14.3083 26.088 13.8363C24.9508 13.3643 23.7313 13.1225 22.5 13.125C20.6458 13.125 18.8332 13.6748 17.2915 14.705C15.7498 15.7351 14.5482 17.1993 13.8386 18.9123C13.1291 20.6254 12.9434 22.5104 13.3051 24.329C13.6669 26.1475 14.5598 27.818 15.8709 29.1291C17.182 30.4402 18.8525 31.3331 20.671 31.6949C22.4896 32.0566 24.3746 31.8709 26.0877 31.1614C27.8007 30.4518 29.2649 29.2502 30.295 27.7085C31.3252 26.1668 31.875 24.3542 31.875 22.5H29.7917C29.7917 26.5208 26.5208 29.7917 22.5 29.7917C18.4792 29.7917 15.2083 26.5208 15.2083 22.5C15.2083 18.4792 18.4792 15.2083 22.5 15.2083C24.5104 15.2083 26.3333 16.0313 27.6563 17.3438L24.5833 20.4167H31.875Z" fill="#0069F7" />
@@ -43,11 +44,11 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
                         </svg>
 
                         {/* Notification Bell */}
-                        <button className="relative p-1.5 sm:p-2 text-gray-600 rounded-lg hover:bg-gray-100">
+                        <button className="relative text-gray-600">
                             <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                             </svg>
-                            <span className="absolute top-1.5 right-2 sm:top-2 sm:right-2.5 w-2 h-2 bg-red-500 rounded-full"></span>
+                            <span className="absolute top-0 w-2 h-2 bg-red-500 rounded-full right-[2px]"></span>
                         </button>
 
                         {/* User Profile */}
