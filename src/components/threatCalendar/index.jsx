@@ -10,38 +10,84 @@ const ThreatCalendar = () => {
 
     const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
-    // Calendar data for all 12 months (starting day of week and number of days)
-    // startDay: 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
-    const allMonthsData = [
-        { name: 'January', startDay: 3, days: 31 },      // Thursday
-        { name: 'February', startDay: 6, days: 29 },     // Sunday
-        { name: 'March', startDay: 0, days: 31 },        // Monday
-        { name: 'April', startDay: 3, days: 30 },        // Thursday
-        { name: 'May', startDay: 5, days: 31 },          // Saturday
-        { name: 'June', startDay: 1, days: 30 },         // Tuesday
-        { name: 'July', startDay: 3, days: 31 },         // Thursday
-        { name: 'August', startDay: 6, days: 31 },       // Sunday
-        { name: 'September', startDay: 2, days: 30 },    // Wednesday
-        { name: 'October', startDay: 4, days: 31 },      // Friday
-        { name: 'November', startDay: 0, days: 30 },     // Monday
-        { name: 'December', startDay: 2, days: 31 },     // Wednesday
-    ];
-
-    // Get calendar data adjusted for selected year
+    // Get calendar data for specific year
     const getCalendarDataForYear = (year) => {
-        const yearOffsets = {
-            'This Year': 0,
-            'Last Year': 1,
-            '2022': 3,
-            '2021': 4
+        // Calendar data for each year
+        // startDay: 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+        const yearData = {
+            'This Year': [ // 2026
+                { name: 'January', startDay: 3, days: 31 },      // Thursday
+                { name: 'February', startDay: 6, days: 28 },     // Sunday
+                { name: 'March', startDay: 6, days: 31 },        // Sunday
+                { name: 'April', startDay: 2, days: 30 },        // Wednesday
+                { name: 'May', startDay: 4, days: 31 },          // Friday
+                { name: 'June', startDay: 0, days: 30 },         // Monday
+                { name: 'July', startDay: 2, days: 31 },         // Wednesday
+                { name: 'August', startDay: 5, days: 31 },       // Saturday
+                { name: 'September', startDay: 1, days: 30 },    // Tuesday
+                { name: 'October', startDay: 3, days: 31 },      // Thursday
+                { name: 'November', startDay: 6, days: 30 },     // Sunday
+                { name: 'December', startDay: 1, days: 31 },     // Tuesday
+            ],
+            'Last Year': [ // 2025
+                { name: 'January', startDay: 2, days: 31 },      // Wednesday
+                { name: 'February', startDay: 5, days: 28 },     // Saturday
+                { name: 'March', startDay: 5, days: 31 },        // Saturday
+                { name: 'April', startDay: 1, days: 30 },        // Tuesday
+                { name: 'May', startDay: 3, days: 31 },          // Thursday
+                { name: 'June', startDay: 6, days: 30 },         // Sunday
+                { name: 'July', startDay: 1, days: 31 },         // Tuesday
+                { name: 'August', startDay: 4, days: 31 },       // Friday
+                { name: 'September', startDay: 0, days: 30 },    // Monday
+                { name: 'October', startDay: 2, days: 31 },      // Wednesday
+                { name: 'November', startDay: 5, days: 30 },     // Saturday
+                { name: 'December', startDay: 0, days: 31 },     // Monday
+            ],
+            '2024': [
+                { name: 'January', startDay: 0, days: 31 },      // Monday
+                { name: 'February', startDay: 3, days: 29 },     // Thursday (leap year)
+                { name: 'March', startDay: 4, days: 31 },        // Friday
+                { name: 'April', startDay: 0, days: 30 },        // Monday
+                { name: 'May', startDay: 2, days: 31 },          // Wednesday
+                { name: 'June', startDay: 5, days: 30 },         // Saturday
+                { name: 'July', startDay: 0, days: 31 },         // Monday
+                { name: 'August', startDay: 3, days: 31 },       // Thursday
+                { name: 'September', startDay: 6, days: 30 },    // Sunday
+                { name: 'October', startDay: 1, days: 31 },      // Tuesday
+                { name: 'November', startDay: 4, days: 30 },     // Friday
+                { name: 'December', startDay: 6, days: 31 },     // Sunday
+            ],
+            '2023': [
+                { name: 'January', startDay: 6, days: 31 },      // Sunday
+                { name: 'February', startDay: 2, days: 28 },     // Wednesday
+                { name: 'March', startDay: 2, days: 31 },        // Wednesday
+                { name: 'April', startDay: 5, days: 30 },        // Saturday
+                { name: 'May', startDay: 0, days: 31 },          // Monday
+                { name: 'June', startDay: 3, days: 30 },         // Thursday
+                { name: 'July', startDay: 5, days: 31 },         // Saturday
+                { name: 'August', startDay: 1, days: 31 },       // Tuesday
+                { name: 'September', startDay: 4, days: 30 },    // Friday
+                { name: 'October', startDay: 6, days: 31 },      // Sunday
+                { name: 'November', startDay: 2, days: 30 },     // Wednesday
+                { name: 'December', startDay: 4, days: 31 },     // Friday
+            ],
+            '2022': [
+                { name: 'January', startDay: 5, days: 31 },      // Saturday
+                { name: 'February', startDay: 1, days: 28 },     // Tuesday
+                { name: 'March', startDay: 1, days: 31 },        // Tuesday
+                { name: 'April', startDay: 4, days: 30 },        // Friday
+                { name: 'May', startDay: 6, days: 31 },          // Sunday
+                { name: 'June', startDay: 2, days: 30 },         // Wednesday
+                { name: 'July', startDay: 4, days: 31 },         // Friday
+                { name: 'August', startDay: 0, days: 31 },       // Monday
+                { name: 'September', startDay: 3, days: 30 },    // Thursday
+                { name: 'October', startDay: 5, days: 31 },      // Saturday
+                { name: 'November', startDay: 1, days: 30 },     // Tuesday
+                { name: 'December', startDay: 3, days: 31 },     // Thursday
+            ],
         };
         
-        const offset = yearOffsets[year] || 0;
-        
-        return allMonthsData.map(month => ({
-            ...month,
-            startDay: (month.startDay + offset) % 7
-        }));
+        return yearData[year] || yearData['This Year'];
     };
 
     // Get months based on view period and selected year
@@ -199,7 +245,7 @@ const ThreatCalendar = () => {
                 {/* Header */}
                 <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-start sm:justify-between">
                     <div>
-                        <h1 className="mb-1 text-xl font-bold text-gray-900 sm:text-2xl">Threat Detection</h1>
+                        <h1 className="mb-1 text-xl font-bold text-gray-900 sm:text-2xl">Threat Detection {selectedYear !== 'This Year' && `- ${selectedYear}`}</h1>
                         <p className="text-xs text-gray-600 sm:text-sm">Real-time monitoring and identification of potential risks</p>
                     </div>
 
