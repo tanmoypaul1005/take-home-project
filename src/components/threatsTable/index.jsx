@@ -175,32 +175,32 @@ const ThreatsTable = () => {
 
             <div className="overflow-x-auto">
                 <table className="w-full">
-                    <thead className="bg-[#F8F8FC] border-b border-gray-200">
+                    <thead className="bg-[#F8F8FC] border-b border-[#EDEDF7]">
                         <tr>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Timestamp</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Country</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Threat Type</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Source IP</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Destination Domain</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Destination IP</th>
-                            <th className="px-6 py-3 text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Risk</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Timestamp</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Country</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Threat Type</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Source IP</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Destination Domain</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Destination IP</th>
+                            <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Risk</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
+                    <tbody className="bg-white divide-y divide-[#EDEDF7]">
                         {currentThreats?.map((threat, index) => (
                             <tr key={index} className="transition-colors hover:bg-gray-50">
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.timestamp}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.timestamp}</td>
                                 <td className="px-6 flex py-4 whitespace-nowrap text-xs font-normal text-[#000000]">
                                     <span className="mr-2">{threat?.flag}</span>
                                     {threat.country}
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.threat}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.sourceIP}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.domain}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat.destIP}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.threat}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.sourceIP}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.domain}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.destIP}</td>
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#FF8A0021] text-[#FF8A00]">
-                                        {threat.risk}
+                                        {threat?.risk}
                                     </span>
                                 </td>
                             </tr>
