@@ -173,8 +173,8 @@ const ThreatsTable = () => {
             </div>
 
             <div className="px-5 overflow-x-auto">
-                <table className="w-full">
-                    <thead className="bg-[#F8F8FC] rounded-[10px]">
+                <table className="w-full rounded-[10px] overflow-hidden">
+                    <thead className="bg-[#F8F8FC]">
                         <tr>
                             <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Timestamp</th>
                             <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Country</th>
