@@ -241,7 +241,7 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-4 bg-white rounded-lg shadow-sm sm:p-5">
+            <div className="p-4 bg-white rounded-[10px] shadow-sm sm:p-5">
                 {/* Header */}
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
@@ -253,12 +253,13 @@ const ThreatCalendar = () => {
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
+                        className="w-full px-4 py-2 pr-10 text-sm text-[#000000] bg-white border font-normal border-[#D3D3D3] rounded-[5px] appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',
                             backgroundRepeat: 'no-repeat',
-                            backgroundSize: '1.5em 1.5em'
+                            backgroundSize: '1.5em 1.5em',
+                            color: '#000000'
                         }}
                     >
                         <option>This Year</option>
