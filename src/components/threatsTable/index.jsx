@@ -185,6 +185,7 @@ const ThreatsTable = () => {
                             <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Risk</th>
                         </tr>
                     </thead>
+                    
                     <tbody className="bg-white divide-y divide-[#EDEDF7]">
                         {currentThreats?.map((threat, index) => (
                             <tr key={index} className="transition-colors">

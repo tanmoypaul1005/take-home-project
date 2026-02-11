@@ -1,7 +1,7 @@
 
 const Header = ({ sidebarOpen, setSidebarOpen }) => {
     return (
-        <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
+        <header className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-md">
             <div className="px-4 py-3 sm:py-4 sm:px-6 lg:px-4">
                 <div className="flex items-center justify-between">
                     {/* Left Section */}
