@@ -43,7 +43,7 @@ const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen })
                                 setSelectedMenu(item.name)
                                 setSidebarOpen(false)
                             }}
-                            className={`w-full flex items-center rounded-[10px] space-x-3 px-6 py-3 text-left transition-colors ${selectedMenu === item.name
+                            className={`w-full flex items-center rounded-[10px] space-x-3 px-5 py-3 text-left transition-colors ${selectedMenu === item.name
                                 ? 'bg-[#217CF6] text-white'
                                 : 'text-blue-100 hover:bg-[#217CF6]'
                                 }`}
