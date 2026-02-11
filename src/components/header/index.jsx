@@ -100,9 +100,11 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
                                 onClick={profileDropdown.toggleDropdown}
                                 className="flex items-center space-x-2 sm:space-x-2.5 hover:opacity-80 transition-opacity"
                             >
-                                <div className="flex items-center justify-center text-xs font-medium text-white bg-blue-600 rounded-full w-7 h-7 sm:w-8 sm:h-8 sm:text-sm">
-                                    {dummyUser.initials}
-                                </div>
+                                <img 
+                                    className="w-8 h-8 sm:w-[40px] sm:h-[40px] rounded-full" 
+                                    src={`./profile.svg`} 
+                                    alt={dummyUser.name} 
+                                />
                                 <div className="hidden text-sm md:block">
                                     <div className="font-normal text-[#2E3950] text-base">{dummyUser.name}</div>
                                     <div className="text-[#2E3950] font-normal text-xs">{dummyUser.role}</div>
