@@ -253,7 +253,7 @@ const ThreatCalendar = () => {
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full px-4 py-2 pr-10 text-sm text-[#000000] bg-white border font-normal border-[#D3D3D3] rounded-[5px] appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
+                        className="w-full px-4 py-2 h-10 pr-10 text-sm text-[#000000] bg-white border font-normal border-[#D3D3D3] rounded-[5px] appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',

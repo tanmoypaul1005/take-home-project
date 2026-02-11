@@ -33,7 +33,7 @@ export const threats = [
     { timestamp: "Feb 02, 2026 12:19", country: "Nepal", flag: <NepalFlag />, threat: "Spyware", sourceIP: "27.34.12.19", domain: "monitor.np", destIP: "192.168.1.19", risk: "Medium" },
     { timestamp: "Oct 19, 2025 12:20", country: "United States", flag: <USAFlag />, threat: "Trojan", sourceIP: "54.182.91.20", domain: "backdoor.us", destIP: "192.168.1.20", risk: "Critical" },
 
-        { timestamp: "Feb 10, 2023 13:21", country: "Singapore", flag: <SingaporeFlag />, threat: "Adware", sourceIP: "103.24.81.21", domain: "adsplus.sg", destIP: "192.168.1.21", risk: "Suspicious" },
+    { timestamp: "Feb 10, 2023 13:21", country: "Singapore", flag: <SingaporeFlag />, threat: "Adware", sourceIP: "103.24.81.21", domain: "adsplus.sg", destIP: "192.168.1.21", risk: "Suspicious" },
     { timestamp: "Mar 11, 2025 14:22", country: "India", flag: <IndiaFlag />, threat: "Trojan", sourceIP: "45.118.132.22", domain: "malbank.in", destIP: "192.168.1.22", risk: "High" },
     { timestamp: "Jan 15, 2026 15:23", country: "Nepal", flag: <NepalFlag />, threat: "Malware", sourceIP: "27.34.12.23", domain: "infect.np", destIP: "192.168.1.23", risk: "High" },
     { timestamp: "Dec 05, 2025 16:24", country: "United States", flag: <USAFlag />, threat: "Phishing", sourceIP: "54.182.91.24", domain: "verify.us", destIP: "192.168.1.24", risk: "Critical" },

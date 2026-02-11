@@ -159,16 +159,16 @@ const ThreatsTable = () => {
                     <tbody className="bg-white divide-y divide-[#EDEDF7]">
                         {currentThreats?.map((threat, index) => (
                             <tr key={index} className="transition-colors">
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.timestamp}</td>
-                                <td className="px-6 flex py-4 whitespace-nowrap text-xs font-normal text-[#000000]">
+                                <td className="px-5 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.timestamp}</td>
+                                <td className="px-5 flex py-4 whitespace-nowrap text-xs font-normal text-[#000000]">
                                     <span className="mr-2">{threat?.flag}</span>
                                     {threat.country}
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.threat}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.sourceIP}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.domain}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.destIP}</td>
-                                <td className="px-6 py-4 whitespace-nowrap">
+                                <td className="px-5 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.threat}</td>
+                                <td className="px-5 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.sourceIP}</td>
+                                <td className="px-5 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.domain}</td>
+                                <td className="px-5 py-4 whitespace-nowrap text-xs font-normal text-[#000000]">{threat?.destIP}</td>
+                                <td className="px-5 py-4 whitespace-nowrap">
                                     <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#FF8A0021] text-[#FF8A00]">
                                         {threat?.risk}
                                     </span>
