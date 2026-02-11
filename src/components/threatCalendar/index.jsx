@@ -333,7 +333,7 @@ const ThreatCalendar = () => {
                         className="fixed z-50"
                         style={{
                             left: `${modalPosition.x + 30}px`,
-                            top: `${modalPosition.y + 180}px`,
+                            top: `${modalPosition.y + 160}px`,
                         }}
                     >
                         <div className="relative p-6 bg-white shadow-2xl rounded-2xl w-[250px]">

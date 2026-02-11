@@ -55,7 +55,7 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
     }
 
     return (
-        <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
+        <div className="flex items-center justify-between px-5 py-5 border-t border-gray-200">
             <div className="flex items-center space-x-2">
                 <IconButton onClick={goToPrevPage} disabled={currentPage === 1}>
                     <DoubleChevronLeftIcon />
