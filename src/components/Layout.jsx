@@ -2,7 +2,8 @@ import { useState } from 'react'
 import SideBar from './sideBar'
 import Header from './header'
 
-const Layout = ({ children, selectedMenu, setSelectedMenu }) => {
+const Layout = ({ children}) => {
+ const [selectedMenu, setSelectedMenu] = useState('Dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
