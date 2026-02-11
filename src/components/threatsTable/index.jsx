@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Pagination from '../pagination'
 import { threats } from './data'
+import CustomSelect from '../common/CustomSelect'
 
 const ThreatsTable = () => {
     const [currentPage, setCurrentPage] = useState(1)
@@ -87,58 +88,27 @@ const ThreatsTable = () => {
                 <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
                 <div className="flex flex-wrap gap-2.5">
                     {/* Select Threat Dropdown */}
-                    <select className="px-4 py-[6px] h-[36px]  pr-10 border border-[#D3D3D3] rounded text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
-                        style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
-                            backgroundPosition: 'right 0.5rem center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: '1.5em 1.5em'
-                        }}
+
+                    <CustomSelect
                         value={selectedThreat}
                         onChange={handleThreatChange}
-                    >
-                        <option>Select Threat</option>
-                        <option>Adware</option>
-                        <option>Malware</option>
-                        <option>Ransomware</option>
-                        <option>Spyware</option>
-                    </select>
+                        options={['Adware', 'Malware', 'Phishing', 'Spyware', 'Trojan']}
+                        placeholder="Select Threat"
+                    />
 
-                    {/* Country Dropdown */}
-                    <select className="px-4 py-[6px] h-[36px]  pr-10 border border-[#D3D3D3] rounded text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
-                        style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
-                            backgroundPosition: 'right 0.5rem center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: '1.5em 1.5em'
-                        }}
+                    <CustomSelect
                         value={selectedCountry}
                         onChange={handleCountryChange}
-                    >
-                        <option>Country</option>
-                        <option>Nepal</option>
-                        <option>India</option>
-                        <option>United States</option>
-                        <option>Singapore</option>
-                    </select>
+                        options={['Nepal', 'India', 'United States', 'Singapore']}
+                        placeholder="Select Country"
+                    />
 
-                    {/* Select Risk Dropdown */}
-                    <select className="px-4 py-[6px] h-[36px] pr-10 border border-[#D3D3D3]  rounded text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[180px]"
-                        style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
-                            backgroundPosition: 'right 0.5rem center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: '1.5em 1.5em'
-                        }}
+                    <CustomSelect
                         value={selectedRisk}
                         onChange={handleRiskChange}
-                    >
-                        <option>Select Risk</option>
-                        <option>Low</option>
-                        <option>Medium</option>
-                        <option>High</option>
-                        <option>Critical</option>
-                    </select>
+                        options={['Low', 'Medium', 'High', 'Critical']}
+                        placeholder="Select Risk"
+                    />
 
                     {/* From Date - To Date Dropdown */}
                     <select className="px-4 py-[6px] h-[36px] pr-10 border border-[#D3D3D3] rounded-[10px] text-gray-600 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer min-w-[200px]"
@@ -185,7 +155,7 @@ const ThreatsTable = () => {
                             <th className="px-6 py-[15px] text-left text-xs font-normal text-[#000000] uppercase tracking-wider">Risk</th>
                         </tr>
                     </thead>
-                    
+
                     <tbody className="bg-white divide-y divide-[#EDEDF7]">
                         {currentThreats?.map((threat, index) => (
                             <tr key={index} className="transition-colors">
