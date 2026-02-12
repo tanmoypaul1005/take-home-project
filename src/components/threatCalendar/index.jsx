@@ -241,7 +241,11 @@ const ThreatCalendar = () => {
 
     return (
         <>
-            <div className="p-4 bg-white rounded-[10px] shadow-sm sm:p-5">
+            <div
+                style={{
+                    boxShadow: "4px 4px 10px 0px #98ADC91A"
+                }}
+                className="p-4 bg-white rounded-[10px] sm:p-5">
                 {/* Header */}
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>

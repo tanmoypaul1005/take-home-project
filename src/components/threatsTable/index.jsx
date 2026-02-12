@@ -90,7 +90,9 @@ const ThreatsTable = () => {
 
 
     return (
-        <div className="bg-white rounded-[10px] shadow-lg">
+        <div style={{
+                boxShadow: "4px 4px 10px 0px #98ADC91A"
+            }} className="bg-white rounded-[10px]">
 
             <div className="flex flex-col p-5 space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
                 <h3 className="text-base font-bold text-[#000000]">Top Threats Detected</h3>
