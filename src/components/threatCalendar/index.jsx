@@ -219,7 +219,7 @@ const ThreatCalendar = () => {
         return (
             <div key={name} className="w-full">
                 <div className="mb-3">
-                    <h3 className="text-xs font-normal text-center text-[#000000]">{name}</h3>
+                    <h3 className="text-xs font-normal text-center text-cBlack">{name}</h3>
                 </div>
 
                 {/* Day headers */}
@@ -257,7 +257,7 @@ const ThreatCalendar = () => {
                     <select
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full px-4 py-2 h-10 pr-10 text-sm text-[#000000] bg-white border font-normal border-[#D3D3D3] rounded-[5px] appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
+                        className="w-full px-4 py-2 h-10 pr-10 text-sm text-cBlack bg-white border font-normal border-[#D3D3D3] rounded-[5px] appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:w-auto"
                         style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                             backgroundPosition: 'right 0.5rem center',
@@ -286,14 +286,14 @@ const ThreatCalendar = () => {
 
                 {/* Footer Controls */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
-                    <span className="text-sm font-normal text-center text-[#000000] sm:text-left">Viewing</span>
+                    <span className="text-sm font-normal text-center text-cBlack sm:text-left">Viewing</span>
 
                     <div className="flex justify-center gap-2 sm:justify-start">
                         <button
                             onClick={() => setViewPeriod(4)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-sm font-normal rounded-[5px] transition-all ${viewPeriod === 4
                                 ? 'bg-[#0069F7] text-white shadow-sm'
-                                : 'bg-[#EBEBEB] text-[#000000] hover:bg-gray-200'
+                                : 'bg-[#EBEBEB] text-cBlack hover:bg-gray-200'
                                 }`}
                         >
                             4 Months
@@ -348,7 +348,7 @@ const ThreatCalendar = () => {
                             />
 
                             {/* Header */}
-                            <h2 className="text-base font-semibold text-[#000000] mb-1">Threats Detection</h2>
+                            <h2 className="mb-1 text-base font-semibold text-cBlack">Threats Detection</h2>
 
                             {/* Date Badge */}
                             <div className="flex gap-x-2.5 items-center gap-3">
@@ -358,7 +358,7 @@ const ThreatCalendar = () => {
                                 </svg>
 
                                 <div>
-                                    <p className="text-xs font-normal text-[#000000]">
+                                    <p className="text-xs font-normal text-cBlack">
                                         {selectedDate.month} {selectedDate.day}, 2023 18:39
                                     </p>
                                 </div>
@@ -373,7 +373,7 @@ const ThreatCalendar = () => {
                                             <path d="M10 6V11" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
                                             <circle cx="10" cy="14" r="0.5" fill="#F59E0B" />
                                         </svg>
-                                        <span className="font-semibold text-[10px] text-[#000000]">Total Threats Detected</span>
+                                        <span className="font-semibold text-[10px] text-cBlack">Total Threats Detected</span>
                                     </div>
                                     <span className="text-xs font-semibold text-[#FF8A00]">{selectedDate.total}</span>
                                 </div>
@@ -394,7 +394,7 @@ const ThreatCalendar = () => {
                                 </div>
 
                                 {/* Low */}
-                                <div className="text-xs font-normal bg-[#CCFFE9] text-[#000000] rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
+                                <div className="text-xs font-normal bg-[#CCFFE9] text-cBlack rounded-[5px] px-2.5 py-[5px] flex items-center justify-between">
                                     <span className="">Low</span>
                                     <span className="">{selectedDate.low}</span>
                                 </div>

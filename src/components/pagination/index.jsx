@@ -79,7 +79,7 @@ const Pagination = ({ totalItems, onPageChange, onItemsPerPageChange }) => {
             </div>
 
             <div className="flex items-center gap-3">
-                <span className="text-sm font-normal text-[#000000]">Viewing</span>
+                <span className="text-sm font-normal text-cBlack">Viewing</span>
 
                 <div className='flex gap-x-1'>
                     {ITEMS_PER_PAGE_OPTIONS.map((option) => (

@@ -10,7 +10,7 @@ const Breadcrumb = ({ items }) => {
               </svg>
             </div>
           )}
-          <span className={item.active ? "text-primary" : "text-[#000000]"}>
+          <span className={item.active ? "text-primary" : "text-cBlack"}>
             {item.label}
           </span>
         </div>
