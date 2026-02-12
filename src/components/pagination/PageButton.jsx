@@ -8,7 +8,7 @@ const PageButton = ({ page, currentPage, onClick }) => {
       onClick={() => onClick(page)}
       className={`px-3 w-[36px] flex justify-center items-center h-8 rounded text-base font-normal ${
         isActive
-          ? 'bg-[#0069F7] text-white'
+          ? 'bg-primary text-white'
           : 'bg-[#EBEBEB] text-[#000000]'
       }`}
     >

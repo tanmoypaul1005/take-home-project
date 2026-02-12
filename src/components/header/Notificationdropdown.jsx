@@ -20,7 +20,7 @@ const NotificationDropdown = ({ notifications, onMarkAsRead, onMarkAllAsRead, on
         {unreadCount > 0 && (
           <button
             onClick={onMarkAllAsRead}
-            className="text-xs text-[#0069F7] hover:text-[#0052C2] font-medium"
+            className="text-xs text-primary hover:text-[#0052C2] font-medium"
           >
             Mark all as read
           </button>
