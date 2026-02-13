@@ -25,7 +25,7 @@ const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen })
     ]
 
     return (
-        <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-68 bg-[#0069F7] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-68 bg-primary transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
             <div className="flex flex-col h-full px-6">
                 {/* Logo */}
                 <div className="flex pt-6">
@@ -43,7 +43,7 @@ const SideBar = ({ selectedMenu, setSelectedMenu, sidebarOpen, setSidebarOpen })
                                 setSelectedMenu(item.name)
                                 setSidebarOpen(false)
                             }}
-                            className={`w-full flex items-center rounded-[10px] space-x-3 px-6 py-3 text-left transition-colors ${selectedMenu === item.name
+                            className={`w-full flex items-center rounded-[10px] space-x-3 px-5 py-3 text-left transition-colors ${selectedMenu === item.name
                                 ? 'bg-[#217CF6] text-white'
                                 : 'text-blue-100 hover:bg-[#217CF6]'
                                 }`}

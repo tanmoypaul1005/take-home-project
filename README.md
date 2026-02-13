@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# my-project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React single-page application bootstrapped with Create React App.
 
-## Available Scripts
+## Setup & Run
 
-In the project directory, you can run:
+- Prerequisites: Node.js 16+ and npm (or Yarn).
+- Install dependencies:
 
-### `npm start`
+```
+npm install
+```
+- Run in development mode:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open http://localhost:3000 in your browser. The dev server uses `react-scripts start`.
 
-### `npm test`
+- Build for production:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm run build
+```
 
-### `npm run build`
+- Run tests:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Framework:** React 19 (via `react` and `react-dom`)
+- **Tooling:** Create React App (`react-scripts`)
+- **Styling:** Tailwind CSS (`tailwindcss` listed in devDependencies)
+- **Testing:** @testing-library/react, @testing-library/jest-dom, @testing-library/user-event
+- **Metrics:** web-vitals
 
-### `npm run eject`
+## Assumptions & Exceptions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- This repository is a front-end SPA only; no backend server included.
+- Environment variables: none required by default; add a `.env` file if you need custom values.
+- Default dev server port is `3000`; change via `PORT` env variable if necessary.
+- The project targets modern browsers as configured by `browserslist` in `package.json`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Known limitations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Accessibility and full test coverage may be incomplete for some components.
+- No CI/CD or deployment scripts are included — use the generated `build/` output with your preferred static host.
+- The documentation for internal components (in `src/components`) is limited; refer to the source for behaviour.
+- The project uses `react-scripts` (Create React App). Running `npm run eject` is irreversible.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Where to look next
 
-## Learn More
+- Source code: `src/`
+- Static build output: `build/`
+- Tailwind config: `tailwind.config.js`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
+If you want, I can add contributor notes, component docs, or deployment instructions next.
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
